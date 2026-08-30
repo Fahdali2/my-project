@@ -7,7 +7,8 @@
     "rating": 5,
     "reviews": 309,
     "category": "إلكترونيات",
-    "source": "AliExpress"
+    "source": "AliExpress",
+    "inStock": true
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "rating": 5,
     "reviews": 126,
     "category": "إلكترونيات",
-    "source": "Temu"
+    "source": "AliExpress",
+    "inStock": true
   },
   {
     "id": 3,
@@ -27,6 +29,84 @@
     "rating": 4,
     "reviews": 98,
     "category": "إلكترونيات",
-    "source": "Shein"
+    "source": "Temu",
+    "inStock": true
+  },
+  {
+    "id": 4,
+    "name": "حذاء رياضي رجالي مريح",
+    "price": 149,
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
+    "rating": 4,
+    "reviews": 58,
+    "category": "رجال",
+    "source": "Temu",
+    "inStock": true
+  },
+  {
+    "id": 5,
+    "name": "ساعة كلاسيكية أنيقة",
+    "price": 249,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80",
+    "rating": 5,
+    "reviews": 74,
+    "category": "إكسسوارات",
+    "source": "SHEIN",
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "name": "كرسي منزلي عصري ومريح",
+    "price": 349,
+    "image": "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=80",
+    "rating": 5,
+    "reviews": 42,
+    "category": "منزل",
+    "source": "Temu",
+    "inStock": true
+  },
+  {
+    "id": 7,
+    "name": "حقيبة نسائية أنيقة",
+    "price": 159,
+    "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80",
+    "rating": 5,
+    "reviews": 186,
+    "category": "نساء",
+    "source": "SHEIN",
+    "inStock": true
+  },
+  {
+    "id": 8,
+    "name": "نظارة شمسية عصرية",
+    "price": 89,
+    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+    "rating": 4,
+    "reviews": 67,
+    "category": "إكسسوارات",
+    "source": "AliExpress",
+    "inStock": true
+  },
+  {
+    "id": 9,
+    "name": "فستان نسائي صيفي",
+    "price": 119,
+    "image": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=80",
+    "rating": 5,
+    "reviews": 213,
+    "category": "نساء",
+    "source": "SHEIN",
+    "inStock": true
+  },
+  {
+    "id": 10,
+    "name": "مصباح مكتبي LED",
+    "price": 79,
+    "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80",
+    "rating": 4,
+    "reviews": 51,
+    "category": "منزل",
+    "source": "Temu",
+    "inStock": true
   }
 ]
