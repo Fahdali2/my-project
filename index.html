@@ -18,6 +18,7 @@
         color: #333;
     }
 
+    /* Header */
     header {
         background: #ff6f00;
         padding: 15px;
@@ -29,12 +30,22 @@
         font-weight: 700;
     }
 
-    header .icons img {
-        width: 26px;
-        margin-left: 10px;
-        cursor: pointer;
+    .search-box {
+        width: 100%;
+        padding: 10px;
+        background: #fff;
+        border-bottom: 1px solid #ddd;
     }
 
+    .search-box input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+    }
+
+    /* Categories */
     nav {
         background: #fff;
         padding: 10px;
@@ -52,6 +63,7 @@
         white-space: nowrap;
     }
 
+    /* Banner */
     .banner {
         background: #ffe0c2;
         padding: 15px;
@@ -61,6 +73,7 @@
         color: #333;
     }
 
+    /* Products Grid */
     .products {
         padding: 20px;
         display: grid;
@@ -104,6 +117,30 @@
         color: #f4b400;
         margin-top: 5px;
     }
+
+    /* Bottom Navigation */
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: 1px solid #ddd;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    .bottom-nav div {
+        text-align: center;
+        font-size: 13px;
+        color: #444;
+    }
+
+    .bottom-nav img {
+        width: 26px;
+        margin-bottom: 5px;
+    }
 </style>
 
 </head>
@@ -111,14 +148,14 @@
 
 <header>
     الفزعة ماركة
-    <div class="icons">
-        <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png">
-        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png">
-        <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png">
-    </div>
 </header>
 
+<div class="search-box">
+    <input type="text" placeholder="ابحث عن المنتجات...">
+</div>
+
 <nav>
+    <a href="#">الكل</a>
     <a href="#">نساء</a>
     <a href="#">رجال</a>
     <a href="#">أطفال</a>
@@ -167,6 +204,25 @@
     </div>
 
 </section>
+
+<div class="bottom-nav">
+    <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png">
+        الرئيسية
+    </div>
+    <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png">
+        الأقسام
+    </div>
+    <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png">
+        الحساب
+    </div>
+    <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png">
+        السلة
+    </div>
+</div>
 
 </body>
 </html>
