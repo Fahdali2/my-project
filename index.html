@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>فزعة ماركت</title>
+
+  <title>متجري | تسوق بسهولة</title>
 
   <style>
     * {
@@ -23,6 +24,9 @@
       color: white;
       padding: 20px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     header h1 {
@@ -34,29 +38,50 @@
       color: #d1d5db;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
+    .cart-button {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      background: #22c55e;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .categories {
+      display: flex;
+      gap: 10px;
       padding: 20px;
-    }
-
-    .hero {
+      overflow-x: auto;
       background: white;
-      padding: 35px 20px;
+    }
+
+    .category {
+      background: #e5e7eb;
+      padding: 10px 18px;
+      border-radius: 20px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .category:hover {
+      background: #22c55e;
+      color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 25px;
+    }
+
+    .title {
       text-align: center;
-      border-radius: 15px;
       margin-bottom: 25px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    }
-
-    .hero h2 {
-      font-size: 26px;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      color: #666;
-      line-height: 1.8;
+      font-size: 28px;
     }
 
     .products {
@@ -68,13 +93,18 @@
     .product {
       background: white;
       border-radius: 15px;
-      padding: 20px;
+      padding: 18px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
     }
 
-    .product .image {
-      font-size: 60px;
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-image {
+      font-size: 80px;
       margin-bottom: 15px;
     }
 
@@ -84,31 +114,119 @@
 
     .price {
       color: #16a34a;
-      font-size: 20px;
+      font-size: 22px;
       font-weight: bold;
       margin-bottom: 15px;
     }
 
-    button {
+    .add-button {
+      width: 100%;
       background: #16a34a;
       color: white;
       border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
+      padding: 12px;
+      border-radius: 10px;
       font-size: 16px;
       cursor: pointer;
     }
 
-    button:hover {
+    .add-button:hover {
       background: #15803d;
     }
 
+    .cart {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 350px;
+      max-width: 90%;
+      height: 100%;
+      background: white;
+      z-index: 1000;
+      padding: 25px;
+      box-shadow: 5px 0 20px rgba(0,0,0,0.2);
+      transition: 0.4s;
+      overflow-y: auto;
+    }
+
+    .cart.active {
+      left: 0;
+    }
+
+    .cart h2 {
+      margin-bottom: 20px;
+    }
+
+    .cart-item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .cart-item h4 {
+      margin-bottom: 8px;
+    }
+
+    .quantity-buttons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .quantity-buttons button {
+      background: #e5e7eb;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .total {
+      margin-top: 25px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .checkout {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      background: #111827;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    .close-cart {
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
     footer {
-      margin-top: 30px;
       background: #111827;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 25px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+
+      .cart-button {
+        position: static;
+        margin-top: 15px;
+      }
     }
   </style>
 </head>
@@ -116,55 +234,195 @@
 <body>
 
 <header>
-  <h1>🛍️ فزعة ماركت</h1>
-  <p>كل ما تحتاجه في مكان واحد</p>
+  <h1>🛍️ متجر فهد</h1>
+  <p>تسوق أفضل المنتجات بأسعار مميزة</p>
+
+  <button class="cart-button" onclick="toggleCart()">
+    🛒 السلة (<span id="cart-count">0</span>)
+  </button>
 </header>
+
+<div class="categories">
+  <div class="category">🔥 الأكثر مبيعًا</div>
+  <div class="category">📱 إلكترونيات</div>
+  <div class="category">🎧 إكسسوارات</div>
+  <div class="category">⌚ ساعات</div>
+  <div class="category">🏠 المنزل</div>
+</div>
 
 <div class="container">
 
-  <section class="hero">
-    <h2>مرحبًا بك في فزعة ماركت 🎉</h2>
-    <p>
-      متجر إلكتروني بسيط لعرض المنتجات والتسوق بسهولة وسرعة.
-    </p>
-  </section>
+  <h2 class="title">منتجاتنا المميزة</h2>
 
-  <section class="products">
+  <div class="products">
 
     <div class="product">
-      <div class="image">📱</div>
+      <div class="product-image">📱</div>
       <h3>هاتف ذكي</h3>
-      <p class="price">999 ريال</p>
-      <button onclick="alert('تمت إضافة المنتج إلى السلة')">
+      <div class="price">999 ريال</div>
+      <button class="add-button" onclick="addToCart('هاتف ذكي', 999)">
         أضف للسلة
       </button>
     </div>
 
     <div class="product">
-      <div class="image">💻</div>
-      <h3>حاسوب محمول</h3>
-      <p class="price">2499 ريال</p>
-      <button onclick="alert('تمت إضافة المنتج إلى السلة')">
+      <div class="product-image">🎧</div>
+      <h3>سماعات لاسلكية</h3>
+      <div class="price">199 ريال</div>
+      <button class="add-button" onclick="addToCart('سماعات لاسلكية', 199)">
         أضف للسلة
       </button>
     </div>
 
     <div class="product">
-      <div class="image">⌚</div>
+      <div class="product-image">⌚</div>
       <h3>ساعة ذكية</h3>
-      <p class="price">399 ريال</p>
-      <button onclick="alert('تمت إضافة المنتج إلى السلة')">
+      <div class="price">249 ريال</div>
+      <button class="add-button" onclick="addToCart('ساعة ذكية', 249)">
         أضف للسلة
       </button>
     </div>
 
-  </section>
+    <div class="product">
+      <div class="product-image">💻</div>
+      <h3>لابتوب</h3>
+      <div class="price">2499 ريال</div>
+      <button class="add-button" onclick="addToCart('لابتوب', 2499)">
+        أضف للسلة
+      </button>
+    </div>
+
+    <div class="product">
+      <div class="product-image">🎮</div>
+      <h3>يد تحكم</h3>
+      <div class="price">149 ريال</div>
+      <button class="add-button" onclick="addToCart('يد تحكم', 149)">
+        أضف للسلة
+      </button>
+    </div>
+
+    <div class="product">
+      <div class="product-image">🔌</div>
+      <h3>شاحن سريع</h3>
+      <div class="price">79 ريال</div>
+      <button class="add-button" onclick="addToCart('شاحن سريع', 79)">
+        أضف للسلة
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<div class="cart" id="cart">
+
+  <button class="close-cart" onclick="toggleCart()">إغلاق ✕</button>
+
+  <h2>🛒 سلة المشتريات</h2>
+
+  <div id="cart-items"></div>
+
+  <div class="total">
+    الإجمالي: <span id="total">0</span> ريال
+  </div>
+
+  <button class="checkout" onclick="checkout()">
+    متابعة إلى الدفع
+  </button>
 
 </div>
 
 <footer>
-  <p>© 2026 فزعة ماركت - جميع الحقوق محفوظة</p>
+  <p>© 2026 متجر فهد - جميع الحقوق محفوظة</p>
 </footer>
+
+<script>
+
+let cart = [];
+
+function addToCart(name, price) {
+
+  const existingProduct = cart.find(item => item.name === name);
+
+  if (existingProduct) {
+    existingProduct.quantity++;
+  } else {
+    cart.push({
+      name: name,
+      price: price,
+      quantity: 1
+    });
+  }
+
+  updateCart();
+}
+
+function updateCart() {
+
+  const cartItems = document.getElementById("cart-items");
+  const cartCount = document.getElementById("cart-count");
+  const total = document.getElementById("total");
+
+  cartItems.innerHTML = "";
+
+  let totalPrice = 0;
+  let totalItems = 0;
+
+  cart.forEach((item, index) => {
+
+    totalPrice += item.price * item.quantity;
+    totalItems += item.quantity;
+
+    cartItems.innerHTML += `
+      <div class="cart-item">
+
+        <h4>${item.name}</h4>
+
+        <p>${item.price} ريال</p>
+
+        <div class="quantity-buttons">
+
+          <button onclick="changeQuantity(${index}, -1)">−</button>
+
+          <span>${item.quantity}</span>
+
+          <button onclick="changeQuantity(${index}, 1)">+</button>
+
+        </div>
+
+      </div>
+    `;
+  });
+
+  cartCount.innerText = totalItems;
+  total.innerText = totalPrice;
+}
+
+function changeQuantity(index, change) {
+
+  cart[index].quantity += change;
+
+  if (cart[index].quantity <= 0) {
+    cart.splice(index, 1);
+  }
+
+  updateCart();
+}
+
+function toggleCart() {
+  document.getElementById("cart").classList.toggle("active");
+}
+
+function checkout() {
+
+  if (cart.length === 0) {
+    alert("السلة فارغة!");
+    return;
+  }
+
+  alert("تم تجهيز طلبك! صفحة الدفع الحقيقية ستكون الخطوة القادمة.");
+}
+
+</script>
 
 </body>
 </html>
