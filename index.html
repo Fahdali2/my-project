@@ -961,10 +961,6 @@ MOBILE
 <div class="app">
 
 
-<!-- =====================================
-HEADER
-===================================== -->
-
 <header class="header">
 
   <div class="top-header">
@@ -1012,8 +1008,6 @@ HEADER
   </div>
 
 
-  <!-- SEARCH -->
-
   <div class="search-box">
 
     <input
@@ -1040,8 +1034,6 @@ HEADER
 
   </div>
 
-
-  <!-- CATEGORIES -->
 
   <div class="categories">
 
@@ -1122,11 +1114,6 @@ HEADER
 </header>
 
 
-
-<!-- =====================================
-BENEFITS
-===================================== -->
-
 <section class="benefits">
 
   <div class="benefit free">
@@ -1169,11 +1156,6 @@ BENEFITS
 </section>
 
 
-
-<!-- =====================================
-TRUST
-===================================== -->
-
 <div class="trust-banner">
 
   <span>
@@ -1186,11 +1168,6 @@ TRUST
 
 </div>
 
-
-
-<!-- =====================================
-DEALS
-===================================== -->
 
 <section class="section">
 
@@ -1215,11 +1192,6 @@ DEALS
 
 </section>
 
-
-
-<!-- =====================================
-SORT TABS
-===================================== -->
 
 <div class="tabs">
 
@@ -1254,11 +1226,6 @@ SORT TABS
 </div>
 
 
-
-<!-- =====================================
-PRODUCTS
-===================================== -->
-
 <main
   class="products"
   id="productsContainer"
@@ -1269,7 +1236,6 @@ PRODUCTS
   </div>
 
 </main>
-
 
 
 <div class="load-more-wrap">
@@ -1287,11 +1253,6 @@ PRODUCTS
 
 </div>
 
-
-
-<!-- =====================================
-BOTTOM NAV
-===================================== -->
 
 <nav class="bottom-nav">
 
@@ -1313,7 +1274,6 @@ BOTTOM NAV
     </button>
 
 
-
     <button
       class="nav-item"
       onclick="openCategoriesPanel(this)"
@@ -1326,7 +1286,6 @@ BOTTOM NAV
       الفئات
 
     </button>
-
 
 
     <button
@@ -1345,7 +1304,6 @@ BOTTOM NAV
       </span>
 
     </button>
-
 
 
     <button
@@ -1373,11 +1331,6 @@ BOTTOM NAV
 
 </nav>
 
-
-
-<!-- =====================================
-CART
-===================================== -->
 
 <div
   class="overlay cart-overlay"
@@ -1430,11 +1383,6 @@ CART
 
 </div>
 
-
-
-<!-- =====================================
-SIDE MENU
-===================================== -->
 
 <div
   class="overlay menu-overlay"
@@ -1511,11 +1459,6 @@ SIDE MENU
 </div>
 
 
-
-<!-- =====================================
-GENERAL PANEL
-===================================== -->
-
 <div
   class="overlay panel-overlay"
   id="panelOverlay"
@@ -1550,11 +1493,6 @@ GENERAL PANEL
 </div>
 
 
-
-<!-- =====================================
-CAMERA INPUT
-===================================== -->
-
 <input
   type="file"
   id="cameraInput"
@@ -1562,7 +1500,6 @@ CAMERA INPUT
   capture="environment"
   style="display:none"
 >
-
 
 
 <script>
@@ -1728,12 +1665,9 @@ async function loadProducts(){
 
     normalizeProducts();
 
-
     applyFilters();
 
-
     renderDeals();
-
 
     updateCartCount();
 
@@ -1741,7 +1675,10 @@ async function loadProducts(){
   }
   catch(error){
 
-    console.error(error);
+    console.error(
+      "خطأ تحميل المنتجات:",
+      error
+    );
 
 
     container.innerHTML = `
@@ -1761,7 +1698,14 @@ async function loadProducts(){
         <span style="font-size:12px">
           تأكد من وجود ملف
           <br>
-          products_1500.json
+          <strong>products_1500.json</strong>
+          <br><br>
+          في نفس مجلد ملف
+          <br>
+          <strong>index.html</strong>
+          <br><br>
+          الخطأ:
+          ${escapeHTML(error.message)}
         </span>
 
         <br><br>
@@ -2183,18 +2127,19 @@ function applyFilters(){
         product.category === selectedCategory;
 
 
-      return
+      /* تم إصلاح الخطأ هنا */
+
+      return (
         matchesSearch &&
-        matchesCategory;
+        matchesCategory
+      );
 
     });
 
 
   sortCurrentProducts();
 
-
   visibleCount = 20;
-
 
   renderProducts();
 
@@ -2226,8 +2171,6 @@ function searchProducts(){
 }
 
 
-/* ENTER SEARCH */
-
 document
   .getElementById("searchInput")
   .addEventListener(
@@ -2243,8 +2186,6 @@ document
     }
   );
 
-
-/* LIVE SEARCH */
 
 document
   .getElementById("searchInput")
@@ -2325,9 +2266,7 @@ function changeSort(type,element){
 
   sortCurrentProducts();
 
-
   visibleCount = 20;
-
 
   renderProducts();
 
@@ -2737,9 +2676,7 @@ function loadMore(){
 
   visibleCount += 20;
 
-
   renderProducts();
-
 
   showToast(
     "تم تحميل المزيد من المنتجات"
@@ -2799,9 +2736,7 @@ function resetFilters(){
   filteredProducts =
     [...allProducts];
 
-
   visibleCount = 20;
-
 
   renderProducts();
 
@@ -2854,10 +2789,6 @@ function toggleFavorite(id,button){
 
 }
 
-
-/* =========================================
-   OPEN FAVORITES
-========================================= */
 
 function openFavorites(){
 
@@ -2997,9 +2928,7 @@ function addToCart(id){
 
   saveCart();
 
-
   updateCartCount();
-
 
   showToast(
     "تمت إضافة المنتج إلى السلة 🛒"
@@ -3186,7 +3115,6 @@ function openCart(){
 
   overlay.classList.add("show");
 
-
   document
     .body
     .classList.add("modal-open");
@@ -3241,9 +3169,7 @@ function changeQuantity(id,amount){
 
   saveCart();
 
-
   updateCartCount();
-
 
   openCart();
 
@@ -3262,9 +3188,7 @@ function removeFromCart(id){
 
   saveCart();
 
-
   updateCartCount();
-
 
   openCart();
 
@@ -3506,7 +3430,6 @@ function setActiveNav(element){
 function goHome(element){
 
   setActiveNav(element);
-
 
   resetFilters();
 
@@ -3960,9 +3883,7 @@ function showToast(message){
 
   toast.id = "toast";
 
-
   toast.className = "toast";
-
 
   toast.textContent = message;
 
@@ -3974,11 +3895,7 @@ function showToast(message){
 
   setTimeout(()=>{
 
-    if(toast){
-
-      toast.remove();
-
-    }
+    toast.remove();
 
   },2500);
 
@@ -4063,5 +3980,4 @@ loadProducts();
 
 
 </body>
-
 </html>
