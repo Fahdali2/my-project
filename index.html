@@ -1069,7 +1069,76 @@ document.querySelectorAll(".tab").forEach(tab => {
     });
 
 });
+/* تحميل المنتجات من products.json */
 
+fetch("products.json")
+    .then(response => response.json())
+    .then(productsData => {
+
+        const productsContainer = document.querySelector(".products");
+
+        productsContainer.innerHTML = "";
+
+        productsData.forEach(product => {
+
+            const productHTML = `
+            
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    <div class="heart">♡</div>
+
+                    <img src="${product.image}" alt="${product.name}">
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        ${product.name}
+                    </div>
+
+                    <div class="product-rating">
+
+                        <span class="stars">
+                            ${"★".repeat(product.rating)}${"☆".repeat(5 - product.rating)}
+                        </span>
+
+                        <span class="rating-count">
+                            (${product.reviews})
+                        </span>
+
+                    </div>
+
+                    <div class="product-bottom">
+
+                        <div class="price">
+                            ${Number(product.price).toLocaleString()} ر.س
+                        </div>
+
+                        <button class="add-cart">
+                            🛒
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            `;
+
+            productsContainer.innerHTML += productHTML;
+
+        });
+
+    })
+    .catch(error => {
+
+        console.error("حدث خطأ في تحميل المنتجات:", error);
+
+    });
 </script>
 
 </body>
