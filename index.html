@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>الفزعة ماركة</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+
 <style>
+
+/* ================= RESET ================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
+
 
 body{
     font-family:"Cairo",sans-serif;
@@ -26,12 +35,14 @@ body{
     overflow-x:hidden;
 }
 
+
 /* ================= HEADER ================= */
 
 .header{
     background:#fff;
     padding:14px 16px 8px;
 }
+
 
 .top-header{
     height:70px;
@@ -40,6 +51,7 @@ body{
     justify-content:space-between;
 }
 
+
 .cart{
     position:relative;
     text-align:center;
@@ -47,10 +59,12 @@ body{
     font-weight:600;
 }
 
+
 .cart-icon{
     font-size:34px;
     line-height:30px;
 }
+
 
 .cart-badge{
     position:absolute;
@@ -67,9 +81,11 @@ body{
     justify-content:center;
 }
 
+
 .logo{
     text-align:center;
 }
+
 
 .logo-title{
     font-size:28px;
@@ -77,9 +93,11 @@ body{
     line-height:1.2;
 }
 
+
 .logo-title span{
     font-size:30px;
 }
+
 
 .logo-sub{
     font-size:12px;
@@ -87,12 +105,14 @@ body{
     font-weight:600;
 }
 
+
 .menu{
     font-size:30px;
     width:45px;
     text-align:left;
     cursor:pointer;
 }
+
 
 /* ================= SEARCH ================= */
 
@@ -107,6 +127,7 @@ body{
     background:#fafafa;
 }
 
+
 .search-btn{
     width:68px;
     height:52px;
@@ -118,21 +139,24 @@ body{
     font-size:28px;
 }
 
+
 .search-input{
     flex:1;
     border:none;
     outline:none;
     background:transparent;
-    font-family:"Cairo";
+    font-family:"Cairo",sans-serif;
     font-size:14px;
     padding:0 15px;
     text-align:right;
 }
 
+
 .camera{
     font-size:25px;
     padding-left:12px;
 }
+
 
 /* ================= CATEGORIES ================= */
 
@@ -147,22 +171,27 @@ body{
     scrollbar-width:none;
 }
 
+
 .categories::-webkit-scrollbar{
     display:none;
 }
+
 
 .category{
     font-size:14px;
     color:#333;
     font-weight:600;
     padding-bottom:9px;
+    cursor:pointer;
 }
+
 
 .category.active{
     color:#111;
     font-weight:900;
     border-bottom:3px solid #111;
 }
+
 
 /* ================= FEATURES ================= */
 
@@ -174,6 +203,7 @@ body{
     background:#fff;
 }
 
+
 .feature{
     min-height:86px;
     border-radius:10px;
@@ -184,29 +214,35 @@ body{
     gap:10px;
 }
 
+
 .feature.green{
     background:#edf6ef;
 }
+
 
 .feature.beige{
     background:#fcf4e8;
 }
 
+
 .feature-icon{
     font-size:34px;
 }
+
 
 .feature-text h3{
     font-size:16px;
     margin-bottom:4px;
 }
 
+
 .feature-text p{
     font-size:11px;
     color:#444;
 }
 
-/* ================= GREEN BAR ================= */
+
+/* ================= SAFE BAR ================= */
 
 .safe-bar{
     margin:4px 15px 18px;
@@ -222,9 +258,11 @@ body{
     font-weight:700;
 }
 
+
 .safe-bar .left{
     font-size:11px;
 }
+
 
 /* ================= SECTION TITLE ================= */
 
@@ -235,15 +273,18 @@ body{
     padding:0 15px 12px;
 }
 
+
 .section-title h2{
     font-size:18px;
     font-weight:800;
 }
 
+
 .section-title span{
     font-size:14px;
     font-weight:700;
 }
+
 
 /* ================= FLASH PRODUCTS ================= */
 
@@ -256,14 +297,17 @@ body{
     scrollbar-width:none;
 }
 
+
 .flash-products::-webkit-scrollbar{
     display:none;
 }
+
 
 .flash-card{
     min-width:160px;
     width:160px;
 }
+
 
 .flash-image{
     width:160px;
@@ -273,11 +317,13 @@ body{
     background:#eee;
 }
 
+
 .flash-image img{
     width:100%;
     height:100%;
     object-fit:cover;
 }
+
 
 .flash-price{
     color:#b52b25;
@@ -287,13 +333,15 @@ body{
     margin-top:6px;
 }
 
+
 .flash-sold{
     text-align:center;
     font-size:11px;
     color:#777;
 }
 
-/* ================= TABS ================= */
+
+/* ================= PRODUCT TABS ================= */
 
 .product-tabs{
     background:#fff;
@@ -307,20 +355,25 @@ body{
     scrollbar-width:none;
 }
 
+
 .product-tabs::-webkit-scrollbar{
     display:none;
 }
+
 
 .tab{
     font-size:14px;
     font-weight:600;
     padding-bottom:7px;
+    cursor:pointer;
 }
+
 
 .tab.active{
     font-weight:900;
     border-bottom:3px solid #111;
 }
+
 
 /* ================= PRODUCT GRID ================= */
 
@@ -332,6 +385,7 @@ body{
     background:#f7f7f7;
 }
 
+
 .product-card{
     background:#fff;
     border-radius:10px;
@@ -341,11 +395,13 @@ body{
     min-height:330px;
 }
 
+
 .product-image{
     height:210px;
     background:#fff;
     position:relative;
 }
+
 
 .product-image img{
     width:100%;
@@ -353,6 +409,7 @@ body{
     object-fit:contain;
     padding:5px;
 }
+
 
 .heart{
     position:absolute;
@@ -367,11 +424,15 @@ body{
     background:#fff;
     font-size:22px;
     color:#444;
+    cursor:pointer;
+    z-index:2;
 }
+
 
 .product-info{
     padding:8px 10px 12px;
 }
+
 
 .product-name{
     font-size:12px;
@@ -380,19 +441,23 @@ body{
     line-height:1.8;
 }
 
+
 .product-rating{
     font-size:11px;
     margin-top:3px;
 }
+
 
 .stars{
     color:#111;
     font-size:15px;
 }
 
+
 .rating-count{
     color:#777;
 }
+
 
 .product-bottom{
     display:flex;
@@ -401,10 +466,12 @@ body{
     margin-top:7px;
 }
 
+
 .price{
     font-size:15px;
     font-weight:800;
 }
+
 
 .add-cart{
     width:42px;
@@ -415,6 +482,7 @@ body{
     font-size:23px;
     cursor:pointer;
 }
+
 
 /* ================= BOTTOM NAV ================= */
 
@@ -433,6 +501,7 @@ body{
     padding-bottom:5px;
 }
 
+
 .nav-item{
     text-align:center;
     font-size:10px;
@@ -441,15 +510,18 @@ body{
     position:relative;
 }
 
+
 .nav-icon{
     font-size:27px;
     line-height:30px;
 }
 
+
 .nav-item.active{
     color:#d31919;
     font-weight:800;
 }
+
 
 .nav-badge{
     position:absolute;
@@ -466,6 +538,7 @@ body{
     justify-content:center;
     font-size:10px;
 }
+
 
 /* ================= MOBILE ================= */
 
@@ -505,34 +578,51 @@ body{
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+
+<!-- ================= HEADER ================= -->
 
 <header class="header">
 
     <div class="top-header">
 
         <div class="cart">
+
             <div class="cart-icon">🛒</div>
+
             <div class="cart-badge">3</div>
+
             <div>السلة</div>
+
         </div>
 
+
         <div class="logo">
+
             <div class="logo-title">
+
                 🛍️ الفزعة ماركة
+
             </div>
+
             <div class="logo-sub">
+
                 كل ما تحتاجه في مكان واحد
+
             </div>
+
         </div>
+
 
         <div class="menu">☰</div>
 
     </div>
+
 
     <div class="search-box">
 
@@ -551,34 +641,46 @@ body{
 </header>
 
 
-<!-- CATEGORIES -->
+<!-- ================= CATEGORIES ================= -->
 
 <div class="categories">
 
     <div class="category active">الكل</div>
+
     <div class="category">نساء</div>
+
     <div class="category">رجال</div>
+
     <div class="category">الرئيسية</div>
+
     <div class="category">مجوهرات</div>
+
     <div class="category">رياضة</div>
+
     <div class="category">أطفال</div>
+
     <div class="category">إلكترونيات</div>
+
     <div class="category">منزل</div>
 
 </div>
 
 
-<!-- FEATURES -->
+<!-- ================= FEATURES ================= -->
 
 <section class="features">
+
 
     <div class="feature green">
 
         <div class="feature-icon">✅</div>
 
         <div class="feature-text">
+
             <h3>الشحن مجاناً</h3>
+
             <p>خاص لك</p>
+
         </div>
 
     </div>
@@ -589,16 +691,20 @@ body{
         <div class="feature-icon">🚚</div>
 
         <div class="feature-text">
+
             <h3>ضمان الاستلام</h3>
+
             <p>استرداد المبلغ المدفوع عند وجود مشكلة</p>
+
         </div>
 
     </div>
 
+
 </section>
 
 
-<!-- SAFE BAR -->
+<!-- ================= SAFE BAR ================= -->
 
 <div class="safe-bar">
 
@@ -609,7 +715,7 @@ body{
 </div>
 
 
-<!-- FLASH DEALS -->
+<!-- ================= FLASH DEALS ================= -->
 
 <div class="section-title">
 
@@ -626,10 +732,13 @@ body{
     <div class="flash-card">
 
         <div class="flash-image">
+
             <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=500&q=80">
+
         </div>
 
         <div class="flash-price">19.99 ر.س</div>
+
         <div class="flash-sold">تم بيع 13K+</div>
 
     </div>
@@ -638,10 +747,13 @@ body{
     <div class="flash-card">
 
         <div class="flash-image">
+
             <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=500&q=80">
+
         </div>
 
         <div class="flash-price">32.20 ر.س</div>
+
         <div class="flash-sold">تم بيع 99</div>
 
     </div>
@@ -650,10 +762,13 @@ body{
     <div class="flash-card">
 
         <div class="flash-image">
+
             <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80">
+
         </div>
 
         <div class="flash-price">6.99 ر.س</div>
+
         <div class="flash-sold">تم بيع 1.5K+</div>
 
     </div>
@@ -662,10 +777,13 @@ body{
     <div class="flash-card">
 
         <div class="flash-image">
+
             <img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=500&q=80">
+
         </div>
 
         <div class="flash-price">15.76 ر.س</div>
+
         <div class="flash-sold">تم بيع 2.3K+</div>
 
     </div>
@@ -674,7 +792,7 @@ body{
 </div>
 
 
-<!-- PRODUCT TABS -->
+<!-- ================= PRODUCT TABS ================= -->
 
 <div class="product-tabs">
 
@@ -689,249 +807,14 @@ body{
 </div>
 
 
-<!-- PRODUCTS -->
+<!-- ================= PRODUCTS ================= -->
 
 <section class="products">
-
-
-    <!-- PRODUCT 1 -->
-
-    <div class="product-card">
-
-        <div class="product-image">
-
-            <div class="heart">♡</div>
-
-            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80">
-
-        </div>
-
-        <div class="product-info">
-
-            <div class="product-name">
-                Samsung Galaxy S24 Ultra 5G - 512GB
-            </div>
-
-            <div class="product-rating">
-
-                <span class="stars">★★★★★</span>
-
-                <span class="rating-count">(309)</span>
-
-            </div>
-
-            <div class="product-bottom">
-
-                <div class="price">3,299.00 ر.س</div>
-
-                <button class="add-cart">🛒</button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- PRODUCT 2 -->
-
-    <div class="product-card">
-
-        <div class="product-image">
-
-            <div class="heart">♡</div>
-
-            <img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=600&q=80">
-
-        </div>
-
-        <div class="product-info">
-
-            <div class="product-name">
-                سماعات بلوتوث لاسلكية برو
-            </div>
-
-            <div class="product-rating">
-
-                <span class="stars">★★★★★</span>
-
-                <span class="rating-count">(126)</span>
-
-            </div>
-
-            <div class="product-bottom">
-
-                <div class="price">129.00 ر.س</div>
-
-                <button class="add-cart">🛒</button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- PRODUCT 3 -->
-
-    <div class="product-card">
-
-        <div class="product-image">
-
-            <div class="heart">♡</div>
-
-            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=600&q=80">
-
-        </div>
-
-        <div class="product-info">
-
-            <div class="product-name">
-                ساعة ذكية شاشة AMOLED
-            </div>
-
-            <div class="product-rating">
-
-                <span class="stars">★★★★☆</span>
-
-                <span class="rating-count">(98)</span>
-
-            </div>
-
-            <div class="product-bottom">
-
-                <div class="price">199.00 ر.س</div>
-
-                <button class="add-cart">🛒</button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- PRODUCT 4 -->
-
-    <div class="product-card">
-
-        <div class="product-image">
-
-            <div class="heart">♡</div>
-
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80">
-
-        </div>
-
-        <div class="product-info">
-
-            <div class="product-name">
-                حذاء رياضي رجالي مريح
-            </div>
-
-            <div class="product-rating">
-
-                <span class="stars">★★★★☆</span>
-
-                <span class="rating-count">(58)</span>
-
-            </div>
-
-            <div class="product-bottom">
-
-                <div class="price">149.00 ر.س</div>
-
-                <button class="add-cart">🛒</button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- PRODUCT 5 -->
-
-    <div class="product-card">
-
-        <div class="product-image">
-
-            <div class="heart">♡</div>
-
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80">
-
-        </div>
-
-        <div class="product-info">
-
-            <div class="product-name">
-                ساعة كلاسيكية أنيقة
-            </div>
-
-            <div class="product-rating">
-
-                <span class="stars">★★★★★</span>
-
-                <span class="rating-count">(74)</span>
-
-            </div>
-
-            <div class="product-bottom">
-
-                <div class="price">249.00 ر.س</div>
-
-                <button class="add-cart">🛒</button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- PRODUCT 6 -->
-
-    <div class="product-card">
-
-        <div class="product-image">
-
-            <div class="heart">♡</div>
-
-            <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=80">
-
-        </div>
-
-        <div class="product-info">
-
-            <div class="product-name">
-                كرسي منزلي عصري ومريح
-            </div>
-
-            <div class="product-rating">
-
-                <span class="stars">★★★★★</span>
-
-                <span class="rating-count">(42)</span>
-
-            </div>
-
-            <div class="product-bottom">
-
-                <div class="price">349.00 ر.س</div>
-
-                <button class="add-cart">🛒</button>
-
-            </div>
-
-        </div>
-
-    </div>
-
 
 </section>
 
 
-<!-- BOTTOM NAVIGATION -->
+<!-- ================= BOTTOM NAVIGATION ================= -->
 
 <nav class="bottom-nav">
 
@@ -979,65 +862,285 @@ body{
 </nav>
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
 
-/* إضافة المنتج للسلة */
+
+/* =========================
+   متغيرات عامة
+========================= */
 
 let cartCount = 3;
 
-const buttons = document.querySelectorAll(".add-cart");
-
-buttons.forEach(button => {
-
-    button.addEventListener("click", function(){
-
-        cartCount++;
-
-        document.querySelector(".cart-badge").textContent = cartCount;
-
-        document.querySelector(".bottom-nav .nav-badge").textContent = cartCount;
-
-        this.innerHTML = "✓";
-
-        setTimeout(() => {
-
-            this.innerHTML = "🛒";
-
-        },1000);
-
-    });
-
-});
+let allProducts = [];
 
 
-/* إضافة للمفضلة */
+/* =========================
+   تحميل المنتجات
+========================= */
 
-document.querySelectorAll(".heart").forEach(heart => {
+fetch("products.json")
 
-    heart.addEventListener("click", function(){
+    .then(response => {
 
-        if(this.innerHTML === "♡"){
+        if(!response.ok){
 
-            this.innerHTML = "♥";
-            this.style.color = "#d91515";
-
-        }else{
-
-            this.innerHTML = "♡";
-            this.style.color = "#444";
+            throw new Error("لم يتم العثور على ملف products.json");
 
         }
 
+        return response.json();
+
+    })
+
+    .then(productsData => {
+
+        allProducts = productsData;
+
+        renderProducts(allProducts);
+
+    })
+
+    .catch(error => {
+
+        console.error("حدث خطأ في تحميل المنتجات:", error);
+
+        document.querySelector(".products").innerHTML = `
+
+            <div style="
+                grid-column:1/3;
+                text-align:center;
+                padding:40px 15px;
+                color:#777;
+                font-family:Cairo,sans-serif;
+            ">
+
+                حدث خطأ في تحميل المنتجات
+
+            </div>
+
+        `;
+
     });
 
-});
+
+/* =========================
+   عرض المنتجات
+========================= */
+
+function renderProducts(productsData){
+
+    const productsContainer = document.querySelector(".products");
+
+    productsContainer.innerHTML = "";
 
 
-/* تغيير التصنيف */
+    if(productsData.length === 0){
+
+        productsContainer.innerHTML = `
+
+            <div style="
+                grid-column:1/3;
+                text-align:center;
+                padding:40px 10px;
+                font-family:Cairo,sans-serif;
+                color:#777;
+                font-size:15px;
+            ">
+
+                لا توجد منتجات في هذا القسم حالياً
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    productsData.forEach(product => {
+
+
+        const rating = Number(product.rating) || 0;
+
+        const reviews = product.reviews || 0;
+
+        const price = Number(product.price) || 0;
+
+
+        const productHTML = `
+
+            <div class="product-card">
+
+
+                <div class="product-image">
+
+                    <div class="heart">♡</div>
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+
+                    <div class="product-name">
+
+                        ${product.name}
+
+                    </div>
+
+
+                    <div class="product-rating">
+
+                        <span class="stars">
+
+                            ${"★".repeat(rating)}${"☆".repeat(5 - rating)}
+
+                        </span>
+
+                        <span class="rating-count">
+
+                            (${reviews})
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-bottom">
+
+                        <div class="price">
+
+                            ${price.toLocaleString()} ر.س
+
+                        </div>
+
+
+                        <button class="add-cart">
+
+                            🛒
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        `;
+
+
+        productsContainer.innerHTML += productHTML;
+
+
+    });
+
+
+    activateProductButtons();
+
+}
+
+
+/* =========================
+   تشغيل أزرار المنتجات
+========================= */
+
+function activateProductButtons(){
+
+
+    /* السلة */
+
+    document.querySelectorAll(".add-cart").forEach(button => {
+
+        button.addEventListener("click", function(){
+
+
+            cartCount++;
+
+
+            document.querySelector(".cart-badge").textContent = cartCount;
+
+
+            const bottomCartBadge = document.querySelector(
+                ".bottom-nav .nav-item:last-child .nav-badge"
+            );
+
+
+            if(bottomCartBadge){
+
+                bottomCartBadge.textContent = cartCount;
+
+            }
+
+
+            this.innerHTML = "✓";
+
+
+            setTimeout(() => {
+
+                this.innerHTML = "🛒";
+
+            },1000);
+
+
+        });
+
+    });
+
+
+    /* المفضلة */
+
+    document.querySelectorAll(".heart").forEach(heart => {
+
+        heart.addEventListener("click", function(){
+
+
+            if(this.innerHTML === "♡"){
+
+                this.innerHTML = "♥";
+
+                this.style.color = "#d91515";
+
+            }
+
+            else{
+
+                this.innerHTML = "♡";
+
+                this.style.color = "#444";
+
+            }
+
+
+        });
+
+    });
+
+
+}
+
+
+/* =========================
+   تغيير التصنيفات
+========================= */
 
 document.querySelectorAll(".category").forEach(category => {
 
+
     category.addEventListener("click", function(){
+
+
+        /* إزالة النشاط من الجميع */
 
         document.querySelectorAll(".category").forEach(item => {
 
@@ -1045,18 +1148,57 @@ document.querySelectorAll(".category").forEach(category => {
 
         });
 
+
+        /* إضافة النشاط للقسم المختار */
+
         this.classList.add("active");
 
+
+        /* اسم القسم */
+
+        const selectedCategory = this.textContent.trim();
+
+
+        /* قسم الكل */
+
+        if(selectedCategory === "الكل"){
+
+            renderProducts(allProducts);
+
+            return;
+
+        }
+
+
+        /* فلترة المنتجات */
+
+        const filteredProducts = allProducts.filter(product => {
+
+
+            return product.category === selectedCategory;
+
+
+        });
+
+
+        renderProducts(filteredProducts);
+
+
     });
+
 
 });
 
 
-/* تغيير تبويبات المنتجات */
+/* =========================
+   تبويبات المنتجات
+========================= */
 
 document.querySelectorAll(".tab").forEach(tab => {
 
+
     tab.addEventListener("click", function(){
+
 
         document.querySelectorAll(".tab").forEach(item => {
 
@@ -1064,82 +1206,80 @@ document.querySelectorAll(".tab").forEach(tab => {
 
         });
 
+
         this.classList.add("active");
 
+
+        const selectedTab = this.textContent.trim();
+
+
+        /* الكل */
+
+        if(selectedTab === "الكل"){
+
+            renderProducts(allProducts);
+
+            return;
+
+        }
+
+
+        /* المفضلات */
+
+        if(selectedTab.includes("المفضلات")){
+
+            return;
+
+        }
+
+
+        /* منتجات 5 نجوم */
+
+        if(selectedTab.includes("5 نجوم")){
+
+
+            const filteredProducts = allProducts.filter(product => {
+
+                return Number(product.rating) === 5;
+
+            });
+
+
+            renderProducts(filteredProducts);
+
+
+            return;
+
+        }
+
+
+        /* الأعلى تقييماً */
+
+        if(selectedTab.includes("الأعلى")){
+
+
+            const sortedProducts = [...allProducts].sort((a,b) => {
+
+                return Number(b.rating) - Number(a.rating);
+
+            });
+
+
+            renderProducts(sortedProducts);
+
+
+        }
+
+
     });
+
 
 });
-/* تحميل المنتجات من products.json */
 
-fetch("products.json")
-    .then(response => response.json())
-    .then(productsData => {
 
-        const productsContainer = document.querySelector(".products");
-
-        productsContainer.innerHTML = "";
-
-        productsData.forEach(product => {
-
-            const productHTML = `
-            
-            <div class="product-card">
-
-                <div class="product-image">
-
-                    <div class="heart">♡</div>
-
-                    <img src="${product.image}" alt="${product.name}">
-
-                </div>
-
-                <div class="product-info">
-
-                    <div class="product-name">
-                        ${product.name}
-                    </div>
-
-                    <div class="product-rating">
-
-                        <span class="stars">
-                            ${"★".repeat(product.rating)}${"☆".repeat(5 - product.rating)}
-                        </span>
-
-                        <span class="rating-count">
-                            (${product.reviews})
-                        </span>
-
-                    </div>
-
-                    <div class="product-bottom">
-
-                        <div class="price">
-                            ${Number(product.price).toLocaleString()} ر.س
-                        </div>
-
-                        <button class="add-cart">
-                            🛒
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            `;
-
-            productsContainer.innerHTML += productHTML;
-
-        });
-
-    })
-    .catch(error => {
-
-        console.error("حدث خطأ في تحميل المنتجات:", error);
-
-    });
 </script>
 
+
 </body>
+
 </html>
