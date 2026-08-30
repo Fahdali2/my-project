@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>الفزعة ماركة | كل ما تحتاجه في مكان واحد</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,218 +10,284 @@
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
-    body {
-        font-family: 'Tajawal', sans-serif;
-        margin: 0;
-        background: #f5f5f5;
-        color: #333;
-    }
+  :root{
+    --accent:#ff6f00;
+    --bg:#f5f5f5;
+    --card:#ffffff;
+    --muted:#777;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:"Tajawal",sans-serif;
+    background:var(--bg);
+    color:#222;
+    -webkit-font-smoothing:antialiased;
+  }
 
-    /* Header */
-    header {
-        background: #ff6f00;
-        padding: 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #fff;
-        font-size: 20px;
-        font-weight: 700;
-    }
+  /* Header */
+  .topbar{
+    background:var(--accent);
+    color:#fff;
+    padding:12px 14px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    justify-content:space-between;
+  }
+  .brand{
+    font-weight:700;
+    font-size:18px;
+    letter-spacing:0.2px;
+  }
+  .icons{
+    display:flex;
+    gap:10px;
+    align-items:center;
+  }
+  .icon-btn{
+    width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;
+  }
+  .icon-btn img{width:18px;height:18px;opacity:0.95}
 
-    .search-box {
-        width: 100%;
-        padding: 10px;
-        background: #fff;
-        border-bottom: 1px solid #ddd;
-    }
+  /* Search */
+  .search-wrap{padding:12px;background:#fff;border-bottom:1px solid #eee}
+  .search{
+    display:flex;gap:8px;align-items:center;
+    max-width:980px;margin:0 auto;
+  }
+  .search input{
+    flex:1;padding:12px 14px;border-radius:10px;border:1px solid #e0e0e0;font-size:15px;
+  }
 
-    .search-box input {
-        width: 100%;
-        padding: 12px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        font-size: 15px;
-    }
+  /* Categories */
+  .cats{
+    display:flex;gap:12px;overflow:auto;padding:12px;background:#fff;border-bottom:1px solid #eee;
+    scrollbar-width:none;
+  }
+  .cats::-webkit-scrollbar{display:none}
+  .cat{
+    background:transparent;padding:8px 12px;border-radius:999px;border:1px solid transparent;color:#444;font-weight:500;white-space:nowrap;
+  }
+  .cat.active{background:var(--accent);color:#fff;border-color:rgba(0,0,0,0.04)}
 
-    /* Categories */
-    nav {
-        background: #fff;
-        padding: 10px;
-        display: flex;
-        overflow-x: auto;
-        gap: 15px;
-        border-bottom: 1px solid #ddd;
-    }
+  /* Banner */
+  .banner{
+    margin:12px;
+    background:linear-gradient(90deg,#fff7ef,#fff2e6);
+    border-radius:12px;padding:14px;text-align:center;font-weight:600;color:#333;
+    box-shadow:0 2px 6px rgba(0,0,0,0.03);
+  }
 
-    nav a {
-        text-decoration: none;
-        color: #444;
-        font-size: 15px;
-        font-weight: 500;
-        white-space: nowrap;
-    }
+  /* Products grid */
+  .grid{
+    padding:14px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+    gap:12px;
+    max-width:1100px;margin:0 auto 90px;
+  }
+  .card{
+    background:var(--card);border-radius:12px;padding:10px;box-shadow:0 6px 18px rgba(16,24,40,0.04);position:relative;
+    display:flex;flex-direction:column;align-items:stretch;
+  }
+  .thumb{
+    width:100%;height:160px;border-radius:10px;overflow:hidden;background:#f0f0f0;
+  }
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .title{font-size:14px;margin:10px 0 6px;font-weight:600;color:#111;min-height:38px}
+  .meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .price{color:var(--accent);font-weight:700;font-size:15px}
+  .sold{font-size:12px;color:var(--muted)}
+  .rating{font-size:13px;color:#f4b400;margin-top:6px}
 
-    /* Banner */
-    .banner {
-        background: #ffe0c2;
-        padding: 15px;
-        text-align: center;
-        font-size: 16px;
-        font-weight: 600;
-        color: #333;
-    }
+  /* Badges */
+  .badge{
+    position:absolute;left:10px;top:10px;background:rgba(0,0,0,0.7);color:#fff;padding:6px 8px;border-radius:8px;font-size:12px;font-weight:700;
+  }
+  .fav{position:absolute;right:10px;top:10px;background:#fff;padding:6px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
 
-    /* Products Grid */
-    .products {
-        padding: 20px;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 15px;
-    }
+  /* Bottom nav */
+  .bottom-nav{
+    position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #eee;display:flex;justify-content:space-around;padding:8px 6px;
+  }
+  .bn-item{display:flex;flex-direction:column;align-items:center;font-size:12px;color:#444}
+  .bn-item img{width:22px;height:22px;margin-bottom:4px;opacity:0.95}
 
-    .product {
-        background: #fff;
-        border-radius: 10px;
-        padding: 10px;
-        box-shadow: 0 0 5px rgba(0,0,0,0.1);
-        text-align: center;
-    }
+  /* cart/notify bubbles */
+  .bubble{position:relative}
+  .bubble .count{
+    position:absolute;top:-6px;left:-6px;background:#ff3b30;color:#fff;border-radius:999px;padding:2px 6px;font-size:11px;font-weight:700;
+  }
 
-    .product img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 8px;
-    }
-
-    .product h3 {
-        font-size: 15px;
-        margin: 10px 0 5px;
-    }
-
-    .product .price {
-        font-size: 16px;
-        font-weight: 700;
-        color: #ff6f00;
-    }
-
-    .product .sold {
-        font-size: 13px;
-        color: #777;
-    }
-
-    .product .rating {
-        font-size: 14px;
-        color: #f4b400;
-        margin-top: 5px;
-    }
-
-    /* Bottom Navigation */
-    .bottom-nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: #fff;
-        border-top: 1px solid #ddd;
-        display: flex;
-        justify-content: space-around;
-        padding: 10px 0;
-    }
-
-    .bottom-nav div {
-        text-align: center;
-        font-size: 13px;
-        color: #444;
-    }
-
-    .bottom-nav img {
-        width: 26px;
-        margin-bottom: 5px;
-    }
+  /* responsive tweaks */
+  @media(min-width:900px){
+    .search{max-width:900px}
+    .grid{max-width:1200px}
+  }
 </style>
-
 </head>
 <body>
 
-<header>
-    الفزعة ماركة
-</header>
+  <!-- Header -->
+  <div class="topbar">
+    <div class="brand">الفزعة ماركة</div>
+    <div class="icons">
+      <div class="icon-btn" title="بحث"><img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt=""></div>
+      <div class="icon-btn bubble" title="الإشعارات">
+        <img src="https://cdn-icons-png.flaticon.com/512/1827/1827349.png" alt="">
+        <span class="count" style="left:-8px;top:-8px;background:#ff3b30">99+</span>
+      </div>
+      <div class="icon-btn bubble" title="السلة">
+        <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="">
+        <span class="count">3</span>
+      </div>
+    </div>
+  </div>
 
-<div class="search-box">
-    <input type="text" placeholder="ابحث عن المنتجات...">
-</div>
+  <!-- Search -->
+  <div class="search-wrap">
+    <div class="search" style="max-width:1100px;margin:0 auto">
+      <input type="search" placeholder="ابحث عن المنتجات..." aria-label="ابحث عن المنتجات">
+    </div>
+  </div>
 
-<nav>
-    <a href="#">الكل</a>
-    <a href="#">نساء</a>
-    <a href="#">رجال</a>
-    <a href="#">أطفال</a>
-    <a href="#">إلكترونيات</a>
-    <a href="#">منزل</a>
-    <a href="#">رياضة</a>
-    <a href="#">مجوهرات</a>
-</nav>
+  <!-- Categories -->
+  <div class="cats" role="navigation" aria-label="الأقسام">
+    <button class="cat active">الكل</button>
+    <button class="cat">نساء</button>
+    <button class="cat">رجال</button>
+    <button class="cat">رئيسية</button>
+    <button class="cat">مجوهرات</button>
+    <button class="cat">رياضات</button>
+    <button class="cat">أطفال</button>
+    <button class="cat">إلكترونيات</button>
+    <button class="cat">منزل</button>
+  </div>
 
-<div class="banner">
-    🚚 الشحن مجاناً — ضمان الاستلام
-</div>
+  <!-- Banner -->
+  <div class="banner">🚚 الشحن مجاناً — ضمان الاستلام</div>
 
-<section class="products">
+  <!-- Products grid -->
+  <main class="grid" id="products">
 
-    <div class="product">
-        <img src="https://images.unsplash.com/photo-1528701800489-20be3c1c56a0">
-        <h3>صندل نسائي أسود</h3>
+    <!-- Product 1 -->
+    <article class="card">
+      <div class="badge">شائع</div>
+      <div class="fav" title="إضافة للمفضلة"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt=""></div>
+      <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1528701800489-20be3c1c56a0?q=80&w=800&auto=format&fit=crop" alt="صندل نسائي أسود">
+      </div>
+      <div class="title">صندل نسائي أسود</div>
+      <div class="meta">
         <div class="price">15.76 ر.س</div>
         <div class="sold">2.3K مبيعات</div>
-        <div class="rating">⭐⭐⭐⭐⭐</div>
-    </div>
+      </div>
+      <div class="rating">★★★★★</div>
+    </article>
 
-    <div class="product">
-        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f">
-        <h3>تيشيرت رجالي</h3>
+    <!-- Product 2 -->
+    <article class="card">
+      <div class="badge">الأكثر مبيعاً</div>
+      <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=800&auto=format&fit=crop" alt="تيشيرت رجالي">
+      </div>
+      <div class="title">تيشيرت BELIEVE IN YOURSELF</div>
+      <div class="meta">
         <div class="price">6.99 ر.س</div>
         <div class="sold">1.5K مبيعات</div>
-        <div class="rating">⭐⭐⭐⭐⭐</div>
-    </div>
+      </div>
+      <div class="rating">★★★★★</div>
+    </article>
 
-    <div class="product">
-        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
-        <h3>سماعات بلوتوث</h3>
-        <div class="price">129 ر.س</div>
+    <!-- Product 3 -->
+    <article class="card">
+      <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1600180758890-9b6b2f3f6b2b?q=80&w=800&auto=format&fit=crop" alt="طقم عطور">
+      </div>
+      <div class="title">LASTAR FRAGRANCE GIFT SET</div>
+      <div class="meta">
+        <div class="price">32.20 ر.س</div>
+        <div class="sold">99 مبيعات</div>
+      </div>
+      <div class="rating">★★★★☆</div>
+    </article>
+
+    <!-- Product 4 -->
+    <article class="card">
+      <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800&auto=format&fit=crop" alt="طقم نسائي">
+      </div>
+      <div class="title">طقم نسائي أنيق</div>
+      <div class="meta">
+        <div class="price">19.99 ر.س</div>
+        <div class="sold">13K مبيعات</div>
+      </div>
+      <div class="rating">★★★★★</div>
+    </article>
+
+    <!-- Product 5 -->
+    <article class="card">
+      <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop" alt="سامسونج S24">
+      </div>
+      <div class="title">Samsung Galaxy S24 Ultra 5G - 512GB</div>
+      <div class="meta">
+        <div class="price">3,299.00 ر.س</div>
+        <div class="sold">309 تقييم</div>
+      </div>
+      <div class="rating">★★★★★</div>
+    </article>
+
+    <!-- Product 6 -->
+    <article class="card">
+      <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?q=80&w=800&auto=format&fit=crop" alt="سماعات بلوتوث">
+      </div>
+      <div class="title">سماعات بلوتوث لاسلكية</div>
+      <div class="meta">
+        <div class="price">129.00 ر.س</div>
         <div class="sold">126 مراجعة</div>
-        <div class="rating">⭐⭐⭐⭐⭐</div>
-    </div>
+      </div>
+      <div class="rating">★★★★☆</div>
+    </article>
 
-    <div class="product">
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
-        <h3>ساعة ذكية AMOLED</h3>
-        <div class="price">199 ر.س</div>
+    <!-- Product 7 -->
+    <article class="card">
+      <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop" alt="ساعة ذكية">
+      </div>
+      <div class="title">ساعة ذكية AMOLED</div>
+      <div class="meta">
+        <div class="price">199.00 ر.س</div>
         <div class="sold">98 مراجعة</div>
-        <div class="rating">⭐⭐⭐⭐⭐</div>
-    </div>
+      </div>
+      <div class="rating">★★★★★</div>
+    </article>
 
-</section>
+    <!-- Product 8 -->
+    <article class="card">
+      <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1528701800489-20be3c1c56a0?q=80&w=800&auto=format&fit=crop" alt="حذاء رياضي">
+      </div>
+      <div class="title">حذاء رياضي مريح</div>
+      <div class="meta">
+        <div class="price">149.00 ر.س</div>
+        <div class="sold">58 مراجعة</div>
+      </div>
+      <div class="rating">★★★★☆</div>
+    </article>
 
-<div class="bottom-nav">
-    <div>
-        <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png">
-        الرئيسية
-    </div>
-    <div>
-        <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png">
-        الأقسام
-    </div>
-    <div>
-        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png">
-        الحساب
-    </div>
-    <div>
-        <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png">
-        السلة
-    </div>
-</div>
+  </main>
+
+  <!-- Bottom navigation -->
+  <nav class="bottom-nav" aria-label="التنقل السفلي">
+    <div class="bn-item"><img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt=""><div>الرئيسية</div></div>
+    <div class="bn-item"><img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt=""><div>الأقسام</div></div>
+    <div class="bn-item"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt=""><div>الحساب</div></div>
+    <div class="bn-item bubble"><img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt=""><div>السلة <span class="count" style="background:#ff6f00;color:#fff;padding:2px 6px;border-radius:999px;margin-left:6px;font-weight:700">3</span></div></div>
+  </nav>
 
 </body>
 </html>
