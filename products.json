@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Samsung Galaxy S24 Ultra 5G - 512GB",
+    "price": 3299,
+    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80",
+    "rating": 5,
+    "reviews": 309,
+    "category": "إلكترونيات",
+    "source": "AliExpress"
+  },
+  {
+    "id": 2,
+    "name": "سماعات بلوتوث لاسلكية برو",
+    "price": 129,
+    "image": "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=600&q=80",
+    "rating": 5,
+    "reviews": 126,
+    "category": "إلكترونيات",
+    "source": "Temu"
+  },
+  {
+    "id": 3,
+    "name": "ساعة ذكية شاشة AMOLED",
+    "price": 199,
+    "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=600&q=80",
+    "rating": 4,
+    "reviews": 98,
+    "category": "إلكترونيات",
+    "source": "Shein"
+  }
+]
