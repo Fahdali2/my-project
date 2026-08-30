@@ -11,10 +11,7 @@
 
   <title>الفرعة ماركة | متجر التسوق</title>
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
     rel="preconnect"
@@ -81,9 +78,7 @@ a{
 }
 
 
-/* =====================================
-HEADER
-===================================== */
+/* HEADER */
 
 .header{
   background:#fff;
@@ -168,9 +163,7 @@ HEADER
 }
 
 
-/* =====================================
-SEARCH
-===================================== */
+/* SEARCH */
 
 .search-box{
   height:56px;
@@ -212,9 +205,7 @@ SEARCH
 }
 
 
-/* =====================================
-CATEGORIES
-===================================== */
+/* CATEGORIES */
 
 .categories{
   display:flex;
@@ -254,9 +245,7 @@ CATEGORIES
 }
 
 
-/* =====================================
-BENEFITS
-===================================== */
+/* BENEFITS */
 
 .benefits{
   display:grid;
@@ -300,19 +289,13 @@ BENEFITS
 }
 
 
-/* =====================================
-TRUST BANNER
-===================================== */
+/* TRUST */
 
 .trust-banner{
   margin:10px 15px 20px;
   padding:14px;
   border-radius:14px;
-  background:linear-gradient(
-    100deg,
-    #006d20,
-    #118d31
-  );
+  background:linear-gradient(100deg,#006d20,#118d31);
   color:white;
   display:flex;
   justify-content:space-between;
@@ -323,9 +306,7 @@ TRUST BANNER
 }
 
 
-/* =====================================
-SECTIONS
-===================================== */
+/* SECTIONS */
 
 .section{
   padding:0 15px 20px;
@@ -351,9 +332,7 @@ SECTIONS
 }
 
 
-/* =====================================
-DEALS
-===================================== */
+/* DEALS */
 
 .deals{
   display:grid;
@@ -401,9 +380,7 @@ DEALS
 }
 
 
-/* =====================================
-TABS
-===================================== */
+/* TABS */
 
 .tabs{
   display:flex;
@@ -444,9 +421,7 @@ TABS
 }
 
 
-/* =====================================
-PRODUCTS
-===================================== */
+/* PRODUCTS */
 
 .products{
   display:grid;
@@ -581,9 +556,7 @@ PRODUCTS
 }
 
 
-/* =====================================
-BOTTOM NAV
-===================================== */
+/* BOTTOM NAV */
 
 .bottom-nav{
   position:fixed;
@@ -641,9 +614,7 @@ BOTTOM NAV
 }
 
 
-/* =====================================
-OVERLAY
-===================================== */
+/* OVERLAY */
 
 .overlay{
   position:fixed;
@@ -658,9 +629,7 @@ OVERLAY
 }
 
 
-/* =====================================
-CART MODAL
-===================================== */
+/* CART */
 
 .cart-overlay{
   align-items:flex-end;
@@ -764,9 +733,7 @@ CART MODAL
 }
 
 
-/* =====================================
-SIDE MENU
-===================================== */
+/* SIDE MENU */
 
 .menu-overlay{
   align-items:stretch;
@@ -813,14 +780,8 @@ SIDE MENU
   border-bottom:1px solid #f1f1f1;
 }
 
-.menu-link:hover{
-  background:#fafafa;
-}
 
-
-/* =====================================
-PANEL MODAL
-===================================== */
+/* PANEL */
 
 .panel-overlay{
   align-items:flex-end;
@@ -833,6 +794,8 @@ PANEL MODAL
   border-radius:22px 22px 0 0;
   padding:20px;
   min-height:280px;
+  max-height:85vh;
+  overflow:auto;
 }
 
 .panel-content{
@@ -850,9 +813,7 @@ PANEL MODAL
 }
 
 
-/* =====================================
-TOAST
-===================================== */
+/* TOAST */
 
 .toast{
   position:fixed;
@@ -870,9 +831,7 @@ TOAST
 }
 
 
-/* =====================================
-DESKTOP
-===================================== */
+/* DESKTOP */
 
 @media(min-width:700px){
 
@@ -888,16 +847,10 @@ DESKTOP
     grid-template-columns:repeat(4,1fr);
   }
 
-  .benefit strong{
-    font-size:15px;
-  }
-
 }
 
 
-/* =====================================
-MOBILE
-===================================== */
+/* MOBILE */
 
 @media(max-width:500px){
 
@@ -955,36 +908,22 @@ MOBILE
 
 </head>
 
-
 <body>
 
 <div class="app">
-
-
-<!-- =====================================
-HEADER
-===================================== -->
 
 <header class="header">
 
   <div class="top-header">
 
-    <div
-      class="cart-top"
-      onclick="openCart()"
-    >
+    <div class="cart-top" onclick="openCart()">
+
       <div class="cart-icon">🛒</div>
 
-      <span
-        class="cart-count"
-        id="topCartCount"
-      >
-        0
-      </span>
+      <span class="cart-count" id="topCartCount">0</span>
 
-      <div class="cart-label">
-        السلة
-      </div>
+      <div class="cart-label">السلة</div>
+
     </div>
 
 
@@ -1011,8 +950,6 @@ HEADER
 
   </div>
 
-
-  <!-- SEARCH -->
 
   <div class="search-box">
 
@@ -1041,79 +978,41 @@ HEADER
   </div>
 
 
-  <!-- CATEGORIES -->
-
   <div class="categories">
 
-    <button
-      class="category active"
-      data-category="الكل"
-      onclick="selectCategory('الكل',this)"
-    >
+    <button class="category active" data-category="الكل" onclick="selectCategory('الكل',this)">
       الكل
     </button>
 
-    <button
-      class="category"
-      data-category="نساء"
-      onclick="selectCategory('نساء',this)"
-    >
+    <button class="category" data-category="نساء" onclick="selectCategory('نساء',this)">
       نساء
     </button>
 
-    <button
-      class="category"
-      data-category="رجال"
-      onclick="selectCategory('رجال',this)"
-    >
+    <button class="category" data-category="رجال" onclick="selectCategory('رجال',this)">
       رجال
     </button>
 
-    <button
-      class="category"
-      data-category="الرئيسية"
-      onclick="selectCategory('الرئيسية',this)"
-    >
+    <button class="category" data-category="الرئيسية" onclick="selectCategory('الرئيسية',this)">
       الرئيسية
     </button>
 
-    <button
-      class="category"
-      data-category="مجوهرات"
-      onclick="selectCategory('مجوهرات',this)"
-    >
+    <button class="category" data-category="مجوهرات" onclick="selectCategory('مجوهرات',this)">
       مجوهرات
     </button>
 
-    <button
-      class="category"
-      data-category="رياضات"
-      onclick="selectCategory('رياضات',this)"
-    >
+    <button class="category" data-category="رياضات" onclick="selectCategory('رياضات',this)">
       رياضات
     </button>
 
-    <button
-      class="category"
-      data-category="أطفال"
-      onclick="selectCategory('أطفال',this)"
-    >
+    <button class="category" data-category="أطفال" onclick="selectCategory('أطفال',this)">
       أطفال
     </button>
 
-    <button
-      class="category"
-      data-category="إلكترونيات"
-      onclick="selectCategory('إلكترونيات',this)"
-    >
+    <button class="category" data-category="إلكترونيات" onclick="selectCategory('إلكترونيات',this)">
       إلكترونيات
     </button>
 
-    <button
-      class="category"
-      data-category="منزل"
-      onclick="selectCategory('منزل',this)"
-    >
+    <button class="category" data-category="منزل" onclick="selectCategory('منزل',this)">
       منزل
     </button>
 
@@ -1122,27 +1021,18 @@ HEADER
 </header>
 
 
-
-<!-- =====================================
-BENEFITS
-===================================== -->
-
 <section class="benefits">
 
   <div class="benefit free">
 
-    <div class="benefit-icon">
-      ✓
-    </div>
+    <div class="benefit-icon">✓</div>
 
     <div>
-      <strong>
-        الشحن مجاناً
-      </strong>
 
-      <small>
-        على منتجات مختارة
-      </small>
+      <strong>الشحن مجاناً</strong>
+
+      <small>على منتجات مختارة</small>
+
     </div>
 
   </div>
@@ -1150,18 +1040,14 @@ BENEFITS
 
   <div class="benefit guarantee">
 
-    <div class="benefit-icon">
-      🚚
-    </div>
+    <div class="benefit-icon">🚚</div>
 
     <div>
-      <strong>
-        ضمان الاستلام
-      </strong>
 
-      <small>
-        استرداد المبلغ عند وجود مشكلة
-      </small>
+      <strong>ضمان الاستلام</strong>
+
+      <small>استرداد المبلغ عند وجود مشكلة</small>
+
     </div>
 
   </div>
@@ -1169,28 +1055,14 @@ BENEFITS
 </section>
 
 
-
-<!-- =====================================
-TRUST
-===================================== -->
-
 <div class="trust-banner">
 
-  <span>
-    🛡️ لماذا تختار الفرعة ماركة؟
-  </span>
+  <span>🛡️ لماذا تختار الفرعة ماركة؟</span>
 
-  <span>
-    مدفوعات آمنة ✓
-  </span>
+  <span>مدفوعات آمنة ✓</span>
 
 </div>
 
-
-
-<!-- =====================================
-DEALS
-===================================== -->
 
 <section class="section">
 
@@ -1200,76 +1072,44 @@ DEALS
       ❮ عروض التخفيضات
     </button>
 
-    <h2>
-      كمية محدودة في المخزون
-    </h2>
+    <h2>كمية محدودة في المخزون</h2>
 
   </div>
 
 
-  <div
-    class="deals"
-    id="dealsContainer"
-  >
-  </div>
+  <div class="deals" id="dealsContainer"></div>
 
 </section>
 
 
-
-<!-- =====================================
-SORT TABS
-===================================== -->
-
 <div class="tabs">
 
-  <button
-    class="tab active"
-    onclick="changeSort('all',this)"
-  >
+  <button class="tab active" onclick="changeSort('all',this)">
     الكل
   </button>
 
-  <button
-    class="tab"
-    onclick="changeSort('popular',this)"
-  >
+  <button class="tab" onclick="changeSort('popular',this)">
     ⚡ الأكثر مبيعاً
   </button>
 
-  <button
-    class="tab"
-    onclick="changeSort('rating',this)"
-  >
+  <button class="tab" onclick="changeSort('rating',this)">
     ⭐ الأعلى تقييماً
   </button>
 
-  <button
-    class="tab"
-    onclick="changeSort('top',this)"
-  >
+  <button class="tab" onclick="changeSort('top',this)">
     👍 الأفضل
   </button>
 
 </div>
 
 
-
-<!-- =====================================
-PRODUCTS
-===================================== -->
-
-<main
-  class="products"
-  id="productsContainer"
->
+<main class="products" id="productsContainer">
 
   <div class="loading">
     جاري تحميل المنتجات...
   </div>
 
 </main>
-
 
 
 <div class="load-more-wrap">
@@ -1284,19 +1124,12 @@ PRODUCTS
 
 </div>
 
-
 </div>
 
-
-
-<!-- =====================================
-BOTTOM NAV
-===================================== -->
 
 <nav class="bottom-nav">
 
   <div class="bottom-nav-inner">
-
 
     <button
       class="nav-item active"
@@ -1304,14 +1137,11 @@ BOTTOM NAV
       onclick="goHome(this)"
     >
 
-      <span class="nav-icon">
-        ⌂
-      </span>
+      <span class="nav-icon">⌂</span>
 
       الرئيسية
 
     </button>
-
 
 
     <button
@@ -1319,14 +1149,11 @@ BOTTOM NAV
       onclick="openCategoriesPanel(this)"
     >
 
-      <span class="nav-icon">
-        ▦
-      </span>
+      <span class="nav-icon">▦</span>
 
       الفئات
 
     </button>
-
 
 
     <button
@@ -1334,18 +1161,13 @@ BOTTOM NAV
       onclick="openAccount(this)"
     >
 
-      <span class="nav-icon">
-        ♙
-      </span>
+      <span class="nav-icon">♙</span>
 
       حسابي
 
-      <span class="nav-badge">
-        +
-      </span>
+      <span class="nav-badge">+</span>
 
     </button>
-
 
 
     <button
@@ -1353,76 +1175,51 @@ BOTTOM NAV
       onclick="openCart()"
     >
 
-      <span class="nav-icon">
-        🛒
-      </span>
+      <span class="nav-icon">🛒</span>
 
       عربة التسوق
 
-      <span
-        class="nav-badge"
-        id="bottomCartCount"
-      >
+      <span class="nav-badge" id="bottomCartCount">
         0
       </span>
 
     </button>
-
 
   </div>
 
 </nav>
 
 
-
-<!-- =====================================
-CART
-===================================== -->
-
-<div
-  class="overlay cart-overlay"
-  id="cartOverlay"
->
+<div class="overlay cart-overlay" id="cartOverlay">
 
   <div class="cart-modal">
 
     <div class="modal-header">
 
-      <button
-        class="close-btn"
-        onclick="closeCart()"
-      >
+      <button class="close-btn" onclick="closeCart()">
         ✕
       </button>
 
-      <h2>
-        عربة التسوق 🛒
-      </h2>
+      <h2>عربة التسوق 🛒</h2>
 
     </div>
 
 
-    <div id="cartItems">
-    </div>
+    <div id="cartItems"></div>
 
 
     <div class="cart-total">
 
       الإجمالي:
 
-      <span id="cartTotal">
-        0.00
-      </span>
+      <span id="cartTotal">0.00</span>
 
       ر.س
 
     </div>
 
 
-    <button
-      class="checkout"
-      onclick="checkout()"
-    >
+    <button class="checkout" onclick="checkout()">
       متابعة الطلب
     </button>
 
@@ -1430,11 +1227,6 @@ CART
 
 </div>
 
-
-
-<!-- =====================================
-SIDE MENU
-===================================== -->
 
 <div
   class="overlay menu-overlay"
@@ -1450,10 +1242,7 @@ SIDE MENU
         🛍️ الفرعة ماركة
       </div>
 
-      <button
-        class="close-btn"
-        onclick="closeMenu()"
-      >
+      <button class="close-btn" onclick="closeMenu()">
         ✕
       </button>
 
@@ -1462,38 +1251,23 @@ SIDE MENU
 
     <div class="menu-links">
 
-      <button
-        class="menu-link"
-        onclick="menuHome()"
-      >
+      <button class="menu-link" onclick="menuHome()">
         🏠 الرئيسية
       </button>
 
-      <button
-        class="menu-link"
-        onclick="menuCategories()"
-      >
+      <button class="menu-link" onclick="menuCategories()">
         ▦ جميع الفئات
       </button>
 
-      <button
-        class="menu-link"
-        onclick="openFavorites()"
-      >
+      <button class="menu-link" onclick="openFavorites()">
         ♥ المفضلة
       </button>
 
-      <button
-        class="menu-link"
-        onclick="openCartFromMenu()"
-      >
+      <button class="menu-link" onclick="openCartFromMenu()">
         🛒 عربة التسوق
       </button>
 
-      <button
-        class="menu-link"
-        onclick="openAccountFromMenu()"
-      >
+      <button class="menu-link" onclick="openAccountFromMenu()">
         👤 حسابي
       </button>
 
@@ -1511,30 +1285,17 @@ SIDE MENU
 </div>
 
 
-
-<!-- =====================================
-GENERAL PANEL
-===================================== -->
-
-<div
-  class="overlay panel-overlay"
-  id="panelOverlay"
->
+<div class="overlay panel-overlay" id="panelOverlay">
 
   <div class="panel-modal">
 
     <div class="modal-header">
 
-      <button
-        class="close-btn"
-        onclick="closePanel()"
-      >
+      <button class="close-btn" onclick="closePanel()">
         ✕
       </button>
 
-      <h2 id="panelTitle">
-        القائمة
-      </h2>
+      <h2 id="panelTitle">القائمة</h2>
 
     </div>
 
@@ -1542,18 +1303,12 @@ GENERAL PANEL
     <div
       class="panel-content"
       id="panelContent"
-    >
-    </div>
+    ></div>
 
   </div>
 
 </div>
 
-
-
-<!-- =====================================
-CAMERA INPUT
-===================================== -->
 
 <input
   type="file"
@@ -1564,31 +1319,20 @@ CAMERA INPUT
 >
 
 
-
 <script>
 
-/* =========================================
-   VARIABLES
-========================================= */
+/* VARIABLES */
 
 let allProducts = [];
-
 let filteredProducts = [];
-
 let visibleCount = 20;
-
 let selectedCategory = "الكل";
-
 let currentSort = "all";
-
 let cart = [];
-
 let favorites = [];
 
 
-/* =========================================
-   FALLBACK IMAGES
-========================================= */
+/* FALLBACK IMAGES */
 
 const fallbackImages = [
 
@@ -1607,9 +1351,7 @@ const fallbackImages = [
 ];
 
 
-/* =========================================
-   LOCAL STORAGE
-========================================= */
+/* LOCAL STORAGE */
 
 function loadSavedData(){
 
@@ -1660,9 +1402,7 @@ function saveFavorites(){
 }
 
 
-/* =========================================
-   LOAD PRODUCTS
-========================================= */
+/* LOAD PRODUCTS */
 
 async function loadProducts(){
 
@@ -1728,12 +1468,9 @@ async function loadProducts(){
 
     normalizeProducts();
 
-
     applyFilters();
 
-
     renderDeals();
-
 
     updateCartCount();
 
@@ -1787,9 +1524,7 @@ async function loadProducts(){
 }
 
 
-/* =========================================
-   NORMALIZE CATEGORY
-========================================= */
+/* DETECT CATEGORY */
 
 function detectCategory(product){
 
@@ -1927,9 +1662,7 @@ function detectCategory(product){
 }
 
 
-/* =========================================
-   NORMALIZE PRODUCTS
-========================================= */
+/* NORMALIZE PRODUCTS */
 
 function normalizeProducts(){
 
@@ -2140,9 +1873,7 @@ function normalizeProducts(){
 }
 
 
-/* =========================================
-   FILTER PRODUCTS
-========================================= */
+/* FILTER PRODUCTS - تم إصلاح المشكلة هنا */
 
 function applyFilters(){
 
@@ -2160,12 +1891,12 @@ function applyFilters(){
 
 
       const productName =
-        String(product.name)
+        String(product.name || "")
         .toLowerCase();
 
 
       const productCategory =
-        String(product.category)
+        String(product.category || "")
         .toLowerCase();
 
 
@@ -2183,9 +1914,7 @@ function applyFilters(){
         product.category === selectedCategory;
 
 
-      return
-        matchesSearch &&
-        matchesCategory;
+      return matchesSearch && matchesCategory;
 
     });
 
@@ -2201,9 +1930,7 @@ function applyFilters(){
 }
 
 
-/* =========================================
-   SEARCH
-========================================= */
+/* SEARCH */
 
 function searchProducts(){
 
@@ -2226,8 +1953,6 @@ function searchProducts(){
 }
 
 
-/* ENTER SEARCH */
-
 document
   .getElementById("searchInput")
   .addEventListener(
@@ -2244,8 +1969,6 @@ document
   );
 
 
-/* LIVE SEARCH */
-
 document
   .getElementById("searchInput")
   .addEventListener(
@@ -2258,9 +1981,7 @@ document
   );
 
 
-/* =========================================
-   SELECT CATEGORY
-========================================= */
+/* SELECT CATEGORY */
 
 function selectCategory(category,element){
 
@@ -2298,9 +2019,7 @@ function selectCategory(category,element){
 }
 
 
-/* =========================================
-   SORT
-========================================= */
+/* SORT */
 
 function changeSort(type,element){
 
@@ -2389,9 +2108,7 @@ function sortCurrentProducts(){
 }
 
 
-/* =========================================
-   DEALS
-========================================= */
+/* DEALS */
 
 function renderDeals(){
 
@@ -2533,9 +2250,7 @@ function showAllDeals(){
 }
 
 
-/* =========================================
-   RENDER PRODUCTS
-========================================= */
+/* RENDER PRODUCTS */
 
 function renderProducts(){
 
@@ -2609,9 +2324,7 @@ function renderProducts(){
 
         <article class="product-card">
 
-
           <div class="product-image">
-
 
             <button
               class="heart ${isFavorite ? "active" : ""}"
@@ -2629,12 +2342,10 @@ function renderProducts(){
               onclick="openProduct('${escapeAttribute(product.id)}')"
             >
 
-
           </div>
 
 
           <div class="product-info">
-
 
             ${
               product.badge
@@ -2661,16 +2372,13 @@ function renderProducts(){
               </span>
 
               <span class="reviews">
-
                 (${formatNumber(product.reviews)})
-
               </span>
 
             </div>
 
 
             <div class="product-bottom">
-
 
               <div class="price">
 
@@ -2691,12 +2399,9 @@ function renderProducts(){
                 🛒
               </button>
 
-
             </div>
 
-
           </div>
-
 
         </article>
 
@@ -2729,17 +2434,13 @@ function renderProducts(){
 }
 
 
-/* =========================================
-   LOAD MORE
-========================================= */
+/* LOAD MORE */
 
 function loadMore(){
 
   visibleCount += 20;
 
-
   renderProducts();
-
 
   showToast(
     "تم تحميل المزيد من المنتجات"
@@ -2748,9 +2449,7 @@ function loadMore(){
 }
 
 
-/* =========================================
-   RESET FILTERS
-========================================= */
+/* RESET FILTERS */
 
 function resetFilters(){
 
@@ -2808,9 +2507,7 @@ function resetFilters(){
 }
 
 
-/* =========================================
-   FAVORITES
-========================================= */
+/* FAVORITES */
 
 function toggleFavorite(id,button){
 
@@ -2854,10 +2551,6 @@ function toggleFavorite(id,button){
 
 }
 
-
-/* =========================================
-   OPEN FAVORITES
-========================================= */
 
 function openFavorites(){
 
@@ -2946,9 +2639,7 @@ function openFavorites(){
 }
 
 
-/* =========================================
-   CART
-========================================= */
+/* CART */
 
 function addToCart(id){
 
@@ -2997,9 +2688,7 @@ function addToCart(id){
 
   saveCart();
 
-
   updateCartCount();
-
 
   showToast(
     "تمت إضافة المنتج إلى السلة 🛒"
@@ -3088,7 +2777,6 @@ function openCart(){
 
         <div class="cart-item">
 
-
           <img
             src="${escapeAttribute(item.image)}"
             alt="${escapeHTML(item.name)}"
@@ -3097,11 +2785,8 @@ function openCart(){
 
           <div class="cart-item-info">
 
-
             <div class="cart-item-name">
-
               ${escapeHTML(item.name)}
-
             </div>
 
 
@@ -3117,7 +2802,6 @@ function openCart(){
 
 
             <div class="quantity-controls">
-
 
               <button
                 class="quantity-btn"
@@ -3139,9 +2823,7 @@ function openCart(){
                 −
               </button>
 
-
             </div>
-
 
           </div>
 
@@ -3152,7 +2834,6 @@ function openCart(){
           >
             ✕
           </button>
-
 
         </div>
 
@@ -3241,9 +2922,7 @@ function changeQuantity(id,amount){
 
   saveCart();
 
-
   updateCartCount();
-
 
   openCart();
 
@@ -3262,9 +2941,7 @@ function removeFromCart(id){
 
   saveCart();
 
-
   updateCartCount();
-
 
   openCart();
 
@@ -3296,9 +2973,7 @@ function checkout(){
 }
 
 
-/* =========================================
-   PRODUCT DETAILS
-========================================= */
+/* PRODUCT DETAILS */
 
 function openProduct(id){
 
@@ -3383,9 +3058,7 @@ function openProduct(id){
 }
 
 
-/* =========================================
-   MENU
-========================================= */
+/* MENU */
 
 function openMenu(){
 
@@ -3479,9 +3152,7 @@ function openAccountFromMenu(){
 }
 
 
-/* =========================================
-   BOTTOM NAV HOME
-========================================= */
+/* BOTTOM NAV */
 
 function setActiveNav(element){
 
@@ -3507,9 +3178,7 @@ function goHome(element){
 
   setActiveNav(element);
 
-
   resetFilters();
-
 
   window.scrollTo({
 
@@ -3522,9 +3191,7 @@ function goHome(element){
 }
 
 
-/* =========================================
-   CATEGORIES PANEL
-========================================= */
+/* CATEGORIES PANEL */
 
 function openCategoriesPanel(element){
 
@@ -3596,7 +3263,6 @@ function selectCategoryFromPanel(category){
 
   closePanel();
 
-
   selectedCategory =
     category;
 
@@ -3642,21 +3308,13 @@ function getCategoryIcon(category){
   const icons = {
 
     "الكل":"🛍️",
-
     "نساء":"👗",
-
     "رجال":"👔",
-
     "الرئيسية":"🏠",
-
     "مجوهرات":"💎",
-
     "رياضات":"⚽",
-
     "أطفال":"🧸",
-
     "إلكترونيات":"📱",
-
     "منزل":"🛋️"
 
   };
@@ -3667,9 +3325,7 @@ function getCategoryIcon(category){
 }
 
 
-/* =========================================
-   ACCOUNT
-========================================= */
+/* ACCOUNT */
 
 function openAccount(element){
 
@@ -3727,9 +3383,7 @@ function openAccount(element){
 }
 
 
-/* =========================================
-   PANEL
-========================================= */
+/* PANEL */
 
 function openPanel(title,content){
 
@@ -3769,9 +3423,7 @@ function closePanel(){
 }
 
 
-/* =========================================
-   CAMERA
-========================================= */
+/* CAMERA */
 
 function openCamera(){
 
@@ -3803,9 +3455,7 @@ document
   );
 
 
-/* =========================================
-   STARS
-========================================= */
+/* STARS */
 
 function getStars(rating){
 
@@ -3839,9 +3489,7 @@ function getStars(rating){
 }
 
 
-/* =========================================
-   PRICE
-========================================= */
+/* PRICE */
 
 function formatPrice(price){
 
@@ -3866,9 +3514,7 @@ function formatPrice(price){
 }
 
 
-/* =========================================
-   NUMBER
-========================================= */
+/* NUMBER */
 
 function formatNumber(number){
 
@@ -3899,9 +3545,7 @@ function formatNumber(number){
 }
 
 
-/* =========================================
-   ESCAPE HTML
-========================================= */
+/* ESCAPE HTML */
 
 function escapeHTML(value){
 
@@ -3937,9 +3581,7 @@ function escapeAttribute(value){
 }
 
 
-/* =========================================
-   TOAST
-========================================= */
+/* TOAST */
 
 function showToast(message){
 
@@ -3960,9 +3602,7 @@ function showToast(message){
 
   toast.id = "toast";
 
-
   toast.className = "toast";
-
 
   toast.textContent = message;
 
@@ -3985,9 +3625,7 @@ function showToast(message){
 }
 
 
-/* =========================================
-   CLOSE OVERLAYS ON BACKGROUND
-========================================= */
+/* CLOSE OVERLAYS */
 
 document
   .getElementById("cartOverlay")
@@ -4027,9 +3665,7 @@ document
   );
 
 
-/* =========================================
-   ESC KEY
-========================================= */
+/* ESC KEY */
 
 document.addEventListener(
   "keydown",
@@ -4049,9 +3685,7 @@ document.addEventListener(
 );
 
 
-/* =========================================
-   START
-========================================= */
+/* START */
 
 loadSavedData();
 
@@ -4061,7 +3695,5 @@ loadProducts();
 
 </script>
 
-
 </body>
-
 </html>
