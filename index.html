@@ -4,553 +4,503 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>فزعة ماركة</title>
+<title>الفزعة ماركة</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-:root{
-  --primary:#d92316;
-  --dark:#161616;
-  --gray:#777;
-  --light:#f6f6f6;
-  --border:#ececec;
-  --green:#08752b;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-  font-family:'Cairo',sans-serif;
-  background:#f7f7f7;
-  color:#161616;
-  padding-bottom:90px;
-}
-
-button{
-  font-family:inherit;
-  border:none;
-  cursor:pointer;
+    font-family:"Cairo",sans-serif;
+    background:#f7f7f7;
+    color:#171717;
+    padding-bottom:90px;
+    overflow-x:hidden;
 }
 
 /* ================= HEADER ================= */
 
 .header{
-  background:#fff;
-  padding:12px 15px 10px;
-  border-bottom:1px solid #eee;
-  position:sticky;
-  top:0;
-  z-index:100;
+    background:#fff;
+    padding:14px 16px 8px;
 }
 
-.topbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+.top-header{
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-.menu-btn{
-  font-size:28px;
-  background:none;
-  width:45px;
-}
-
-.logo-area{
-  text-align:center;
-}
-
-.logo{
-  font-size:25px;
-  font-weight:900;
-  line-height:1.2;
-}
-
-.logo-icon{
-  font-size:27px;
-}
-
-.logo-sub{
-  font-size:11px;
-  color:#555;
-  margin-top:2px;
-}
-
-.cart-top{
-  position:relative;
-  width:50px;
-  text-align:center;
+.cart{
+    position:relative;
+    text-align:center;
+    font-size:12px;
+    font-weight:600;
 }
 
 .cart-icon{
-  font-size:28px;
+    font-size:34px;
+    line-height:30px;
 }
 
-.cart-text{
-  display:block;
-  font-size:10px;
-  margin-top:-4px;
+.cart-badge{
+    position:absolute;
+    top:-8px;
+    right:-8px;
+    width:23px;
+    height:23px;
+    background:#d91515;
+    color:#fff;
+    border-radius:50%;
+    font-size:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.cart-count{
-  position:absolute;
-  top:-5px;
-  right:0;
-  background:#d9251a;
-  color:#fff;
-  width:22px;
-  height:22px;
-  border-radius:50%;
-  font-size:11px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.logo{
+    text-align:center;
+}
+
+.logo-title{
+    font-size:28px;
+    font-weight:900;
+    line-height:1.2;
+}
+
+.logo-title span{
+    font-size:30px;
+}
+
+.logo-sub{
+    font-size:12px;
+    color:#333;
+    font-weight:600;
+}
+
+.menu{
+    font-size:30px;
+    width:45px;
+    text-align:left;
+    cursor:pointer;
 }
 
 /* ================= SEARCH ================= */
 
 .search-box{
-  margin-top:14px;
-  height:55px;
-  border:1.5px solid #d8d8d8;
-  border-radius:30px;
-  display:flex;
-  align-items:center;
-  overflow:hidden;
-  background:#fff;
-}
-
-.search-input{
-  flex:1;
-  border:none;
-  outline:none;
-  padding:0 18px;
-  font-family:inherit;
-  font-size:13px;
-  text-align:right;
+    margin-top:5px;
+    height:58px;
+    border:1px solid #ddd;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    background:#fafafa;
 }
 
 .search-btn{
-  width:66px;
-  height:100%;
-  background:#050505;
-  color:white;
-  font-size:24px;
-  border-radius:30px 0 0 30px;
+    width:68px;
+    height:52px;
+    margin:3px;
+    border-radius:27px;
+    background:#050505;
+    color:#fff;
+    border:none;
+    font-size:28px;
+}
+
+.search-input{
+    flex:1;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-family:"Cairo";
+    font-size:14px;
+    padding:0 15px;
+    text-align:right;
 }
 
 .camera{
-  width:50px;
-  background:white;
-  font-size:22px;
+    font-size:25px;
+    padding-left:12px;
 }
 
 /* ================= CATEGORIES ================= */
 
 .categories{
-  background:#fff;
-  display:flex;
-  overflow-x:auto;
-  gap:26px;
-  padding:14px 18px;
-  white-space:nowrap;
-  scrollbar-width:none;
+    background:#fff;
+    display:flex;
+    gap:24px;
+    overflow-x:auto;
+    white-space:nowrap;
+    padding:18px 15px 12px;
+    border-bottom:1px solid #eee;
+    scrollbar-width:none;
 }
 
 .categories::-webkit-scrollbar{
-  display:none;
+    display:none;
 }
 
 .category{
-  font-size:13px;
-  color:#333;
-  position:relative;
-  padding-bottom:7px;
+    font-size:14px;
+    color:#333;
+    font-weight:600;
+    padding-bottom:9px;
 }
 
 .category.active{
-  font-weight:800;
+    color:#111;
+    font-weight:900;
+    border-bottom:3px solid #111;
 }
 
-.category.active:after{
-  content:"";
-  position:absolute;
-  bottom:0;
-  right:0;
-  width:35px;
-  height:3px;
-  background:#111;
-  border-radius:10px;
+/* ================= FEATURES ================= */
+
+.features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    padding:16px 15px;
+    background:#fff;
 }
 
-/* ================= BENEFITS ================= */
-
-.benefits{
-  background:#fff;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  padding:14px;
+.feature{
+    min-height:86px;
+    border-radius:10px;
+    padding:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
 }
 
-.benefit{
-  border-radius:12px;
-  min-height:84px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  padding:12px;
+.feature.green{
+    background:#edf6ef;
 }
 
-.benefit.shipping{
-  background:linear-gradient(120deg,#edf3f1,#e2eee9);
+.feature.beige{
+    background:#fcf4e8;
 }
 
-.benefit.guarantee{
-  background:linear-gradient(120deg,#fff5e7,#f7eee1);
+.feature-icon{
+    font-size:34px;
 }
 
-.benefit-icon{
-  font-size:34px;
+.feature-text h3{
+    font-size:16px;
+    margin-bottom:4px;
 }
 
-.benefit h3{
-  font-size:15px;
+.feature-text p{
+    font-size:11px;
+    color:#444;
 }
 
-.benefit p{
-  font-size:11px;
-  margin-top:3px;
-  color:#555;
+/* ================= GREEN BAR ================= */
+
+.safe-bar{
+    margin:4px 15px 18px;
+    background:linear-gradient(90deg,#034f14,#08751e);
+    height:45px;
+    border-radius:8px;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 18px;
+    font-size:13px;
+    font-weight:700;
 }
 
-/* ================= GREEN BANNER ================= */
-
-.green-banner{
-  margin:8px 14px 15px;
-  background:linear-gradient(90deg,#00621e,#0d7d31);
-  color:white;
-  border-radius:7px;
-  padding:11px 15px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  font-size:13px;
-  font-weight:700;
+.safe-bar .left{
+    font-size:11px;
 }
 
-/* ================= SECTION ================= */
-
-.section{
-  background:#fff;
-  margin-bottom:8px;
-}
+/* ================= SECTION TITLE ================= */
 
 .section-title{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 15px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 15px 12px;
 }
 
 .section-title h2{
-  font-size:17px;
+    font-size:18px;
+    font-weight:800;
 }
 
 .section-title span{
-  font-size:13px;
-  color:#555;
+    font-size:14px;
+    font-weight:700;
 }
 
-/* ================= DEALS ================= */
+/* ================= FLASH PRODUCTS ================= */
 
-.deals{
-  display:flex;
-  gap:10px;
-  overflow-x:auto;
-  padding:0 14px 14px;
-  direction:ltr;
-  scrollbar-width:none;
+.flash-products{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding:0 15px 14px;
+    background:#fff;
+    scrollbar-width:none;
 }
 
-.deals::-webkit-scrollbar{
-  display:none;
+.flash-products::-webkit-scrollbar{
+    display:none;
 }
 
-.deal-card{
-  min-width:160px;
-  background:#fff;
-  text-align:center;
+.flash-card{
+    min-width:160px;
+    width:160px;
 }
 
-.deal-image{
-  width:160px;
-  height:180px;
-  border-radius:8px;
-  object-fit:cover;
-  display:block;
-  background:#eee;
+.flash-image{
+    width:160px;
+    height:180px;
+    border-radius:9px;
+    overflow:hidden;
+    background:#eee;
 }
 
-.deal-price{
-  color:#c8271d;
-  font-size:16px;
-  font-weight:800;
-  margin-top:7px;
+.flash-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-.deal-sold{
-  font-size:11px;
-  color:#666;
-  margin-top:1px;
+.flash-price{
+    color:#b52b25;
+    font-size:15px;
+    font-weight:800;
+    text-align:center;
+    margin-top:6px;
 }
 
-/* ================= FILTER TABS ================= */
+.flash-sold{
+    text-align:center;
+    font-size:11px;
+    color:#777;
+}
+
+/* ================= TABS ================= */
 
 .product-tabs{
-  background:#fff;
-  display:flex;
-  overflow-x:auto;
-  gap:28px;
-  padding:12px 18px;
-  border-top:1px solid #eee;
-  border-bottom:1px solid #eee;
-  white-space:nowrap;
-  scrollbar-width:none;
+    background:#fff;
+    border-top:1px solid #eee;
+    border-bottom:1px solid #eee;
+    display:flex;
+    gap:25px;
+    padding:15px;
+    overflow-x:auto;
+    white-space:nowrap;
+    scrollbar-width:none;
 }
 
 .product-tabs::-webkit-scrollbar{
-  display:none;
+    display:none;
 }
 
 .tab{
-  font-size:13px;
-  color:#555;
-  position:relative;
-  padding-bottom:7px;
+    font-size:14px;
+    font-weight:600;
+    padding-bottom:7px;
 }
 
 .tab.active{
-  color:#111;
-  font-weight:800;
+    font-weight:900;
+    border-bottom:3px solid #111;
 }
 
-.tab.active:after{
-  content:"";
-  position:absolute;
-  bottom:0;
-  right:0;
-  width:30px;
-  height:3px;
-  background:#111;
-}
-
-/* ================= PRODUCTS ================= */
+/* ================= PRODUCT GRID ================= */
 
 .products{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  padding:10px;
-  background:#f7f7f7;
+    padding:12px 14px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    background:#f7f7f7;
 }
 
 .product-card{
-  background:#fff;
-  border-radius:10px;
-  overflow:hidden;
-  position:relative;
-  border:1px solid #efefef;
-  min-height:355px;
-}
-
-.product-image-wrap{
-  width:100%;
-  height:220px;
-  position:relative;
-  background:#fafafa;
-  overflow:hidden;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid #eeeeee;
+    position:relative;
+    min-height:330px;
 }
 
 .product-image{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  display:block;
+    height:210px;
+    background:#fff;
+    position:relative;
 }
 
-.favorite{
-  position:absolute;
-  top:10px;
-  right:10px;
-  width:32px;
-  height:32px;
-  background:rgba(255,255,255,.92);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:19px;
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:5px;
+}
+
+.heart{
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    font-size:22px;
+    color:#444;
 }
 
 .product-info{
-  padding:9px 10px 12px;
+    padding:8px 10px 12px;
 }
 
 .product-name{
-  font-size:12px;
-  line-height:1.7;
-  min-height:40px;
-  color:#222;
+    font-size:12px;
+    font-weight:600;
+    min-height:40px;
+    line-height:1.8;
 }
 
-.product-meta{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-top:5px;
+.product-rating{
+    font-size:11px;
+    margin-top:3px;
 }
 
-.rating{
-  font-size:12px;
-  color:#111;
+.stars{
+    color:#111;
+    font-size:15px;
 }
 
-.rating span{
-  color:#111;
-  font-size:14px;
-}
-
-.sales{
-  font-size:10px;
-  color:#777;
+.rating-count{
+    color:#777;
 }
 
 .product-bottom{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-top:7px;
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    margin-top:7px;
 }
 
 .price{
-  font-size:15px;
-  font-weight:800;
-  color:#222;
-}
-
-.old-price{
-  color:#999;
-  text-decoration:line-through;
-  font-size:10px;
+    font-size:15px;
+    font-weight:800;
 }
 
 .add-cart{
-  width:42px;
-  height:42px;
-  border:1px solid #ddd;
-  background:white;
-  border-radius:9px;
-  font-size:20px;
-}
-
-/* ================= BADGE ================= */
-
-.badge{
-  position:absolute;
-  top:8px;
-  left:8px;
-  z-index:2;
-  font-size:9px;
-  background:#fff;
-  color:#16813d;
-  border:1px solid #16813d;
-  border-radius:4px;
-  padding:3px 6px;
+    width:42px;
+    height:42px;
+    border:1px solid #ddd;
+    background:#fff;
+    border-radius:9px;
+    font-size:23px;
+    cursor:pointer;
 }
 
 /* ================= BOTTOM NAV ================= */
 
 .bottom-nav{
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:76px;
-  background:#fff;
-  border-top:1px solid #ddd;
-  z-index:999;
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
-  padding-bottom:5px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height:76px;
+    background:#fff;
+    border-top:1px solid #ddd;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    z-index:999;
+    padding-bottom:5px;
 }
 
 .nav-item{
-  text-align:center;
-  font-size:10px;
-  color:#333;
-  min-width:60px;
-  position:relative;
+    text-align:center;
+    font-size:10px;
+    color:#222;
+    min-width:65px;
+    position:relative;
 }
 
 .nav-icon{
-  display:block;
-  font-size:25px;
-  margin-bottom:3px;
+    font-size:27px;
+    line-height:30px;
 }
 
 .nav-item.active{
-  color:#d92316;
-  font-weight:800;
+    color:#d31919;
+    font-weight:800;
 }
 
 .nav-badge{
-  position:absolute;
-  top:-5px;
-  right:7px;
-  background:#d92316;
-  color:#fff;
-  border-radius:12px;
-  font-size:9px;
-  padding:2px 5px;
+    position:absolute;
+    top:-7px;
+    right:8px;
+    background:#d91515;
+    color:white;
+    border-radius:20px;
+    min-width:20px;
+    height:20px;
+    padding:0 4px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
 }
 
-.shipping-small{
-  position:absolute;
-  bottom:52px;
-  left:8px;
-  background:#167a29;
-  color:white;
-  font-size:9px;
-  padding:5px 8px;
-  border-radius:7px;
-}
+/* ================= MOBILE ================= */
 
-/* ================= RESPONSIVE ================= */
+@media(max-width:380px){
 
-@media(min-width:700px){
+    .logo-title{
+        font-size:23px;
+    }
 
-  body{
-    max-width:700px;
-    margin:auto;
-    box-shadow:0 0 30px rgba(0,0,0,.08);
-  }
+    .logo-title span{
+        font-size:25px;
+    }
 
-  .bottom-nav{
-    max-width:700px;
-    left:50%;
-    transform:translateX(-50%);
-  }
+    .products{
+        gap:9px;
+        padding:10px;
+    }
 
-  .products{
-    grid-template-columns:repeat(3,1fr);
-  }
+    .product-card{
+        min-height:300px;
+    }
+
+    .product-image{
+        height:185px;
+    }
+
+    .flash-card,
+    .flash-image{
+        width:145px;
+        min-width:145px;
+    }
+
+    .flash-image{
+        height:165px;
+    }
 
 }
 
@@ -563,40 +513,40 @@ button{
 
 <header class="header">
 
-  <div class="topbar">
+    <div class="top-header">
 
-    <div class="cart-top">
-      <div class="cart-count" id="cartCount">0</div>
-      <div class="cart-icon">🛒</div>
-      <span class="cart-text">السلة</span>
+        <div class="cart">
+            <div class="cart-icon">🛒</div>
+            <div class="cart-badge">3</div>
+            <div>السلة</div>
+        </div>
+
+        <div class="logo">
+            <div class="logo-title">
+                🛍️ الفزعة ماركة
+            </div>
+            <div class="logo-sub">
+                كل ما تحتاجه في مكان واحد
+            </div>
+        </div>
+
+        <div class="menu">☰</div>
+
     </div>
 
-    <div class="logo-area">
-      <div class="logo">
-        <span class="logo-icon">🛍️</span>
-        الفزعة ماركة
-      </div>
-      <div class="logo-sub">كل ما تحتاجه في مكان واحد</div>
+    <div class="search-box">
+
+        <input
+            class="search-input"
+            type="text"
+            placeholder="ابحث عن منتج أو علامة تجارية..."
+        >
+
+        <div class="camera">▣</div>
+
+        <button class="search-btn">⌕</button>
+
     </div>
-
-    <button class="menu-btn">☰</button>
-
-  </div>
-
-
-  <div class="search-box">
-
-    <input
-      type="text"
-      class="search-input"
-      placeholder="ابحث عن منتج أو علامة تجارية..."
-    >
-
-    <button class="camera">📷</button>
-
-    <button class="search-btn">⌕</button>
-
-  </div>
 
 </header>
 
@@ -605,527 +555,518 @@ button{
 
 <div class="categories">
 
-  <div class="category active">الكل</div>
-  <div class="category">نساء</div>
-  <div class="category">رجال</div>
-  <div class="category">الرئيسية</div>
-  <div class="category">مجوهرات</div>
-  <div class="category">رياضة</div>
-  <div class="category">أطفال</div>
-  <div class="category">إلكترونيات</div>
-  <div class="category">منزل</div>
+    <div class="category active">الكل</div>
+    <div class="category">نساء</div>
+    <div class="category">رجال</div>
+    <div class="category">الرئيسية</div>
+    <div class="category">مجوهرات</div>
+    <div class="category">رياضة</div>
+    <div class="category">أطفال</div>
+    <div class="category">إلكترونيات</div>
+    <div class="category">منزل</div>
 
 </div>
 
 
-<!-- BENEFITS -->
+<!-- FEATURES -->
 
-<section class="benefits">
+<section class="features">
 
-  <div class="benefit shipping">
-    <div class="benefit-icon">✅</div>
+    <div class="feature green">
 
-    <div>
-      <h3>الشحن مجاناً</h3>
-      <p>خاص لك</p>
+        <div class="feature-icon">✅</div>
+
+        <div class="feature-text">
+            <h3>الشحن مجاناً</h3>
+            <p>خاص لك</p>
+        </div>
+
     </div>
-  </div>
 
 
-  <div class="benefit guarantee">
-    <div class="benefit-icon">🚚</div>
+    <div class="feature beige">
 
-    <div>
-      <h3>ضمان الاستلام</h3>
-      <p>استرداد المبلغ المدفوع عند وجود مشكلة</p>
+        <div class="feature-icon">🚚</div>
+
+        <div class="feature-text">
+            <h3>ضمان الاستلام</h3>
+            <p>استرداد المبلغ المدفوع عند وجود مشكلة</p>
+        </div>
+
     </div>
-  </div>
 
 </section>
 
 
-<div class="green-banner">
+<!-- SAFE BAR -->
 
-  <span>🛡️ لماذا تختار الفزعة ماركة؟</span>
+<div class="safe-bar">
 
-  <span>مدفوعات آمنة ›</span>
+    <span>🛡️ لماذا تختار الفزعة ماركة؟</span>
+
+    <span class="left">‹ مدفوعات آمنة</span>
 
 </div>
 
 
-<!-- DEALS -->
+<!-- FLASH DEALS -->
 
-<section class="section">
-
-  <div class="section-title">
+<div class="section-title">
 
     <h2>🏷️ عروض التخفيضات</h2>
 
     <span>كمية محدودة في المخزون</span>
 
-  </div>
+</div>
 
 
-  <div class="deals">
-
-    <div class="deal-card">
-
-      <img
-      class="deal-image"
-      src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=400&q=80"
-      >
-
-      <div class="deal-price">15.76 ر.س</div>
-
-      <div class="deal-sold">تم بيع +2.3K</div>
-
-    </div>
+<div class="flash-products">
 
 
-    <div class="deal-card">
+    <div class="flash-card">
 
-      <img
-      class="deal-image"
-      src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=400&q=80"
-      >
+        <div class="flash-image">
+            <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=500&q=80">
+        </div>
 
-      <div class="deal-price">6.99 ر.س</div>
-
-      <div class="deal-sold">تم بيع +1.5K</div>
+        <div class="flash-price">19.99 ر.س</div>
+        <div class="flash-sold">تم بيع 13K+</div>
 
     </div>
 
 
-    <div class="deal-card">
+    <div class="flash-card">
 
-      <img
-      class="deal-image"
-      src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=400&q=80"
-      >
+        <div class="flash-image">
+            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=500&q=80">
+        </div>
 
-      <div class="deal-price">32.20 ر.س</div>
-
-      <div class="deal-sold">تم بيع 99</div>
+        <div class="flash-price">32.20 ر.س</div>
+        <div class="flash-sold">تم بيع 99</div>
 
     </div>
 
 
-    <div class="deal-card">
+    <div class="flash-card">
 
-      <img
-      class="deal-image"
-      src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=400&q=80"
-      >
+        <div class="flash-image">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80">
+        </div>
 
-      <div class="deal-price">19.99 ر.س</div>
-
-      <div class="deal-sold">تم بيع +13K</div>
+        <div class="flash-price">6.99 ر.س</div>
+        <div class="flash-sold">تم بيع 1.5K+</div>
 
     </div>
 
-  </div>
 
-</section>
+    <div class="flash-card">
+
+        <div class="flash-image">
+            <img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=500&q=80">
+        </div>
+
+        <div class="flash-price">15.76 ر.س</div>
+        <div class="flash-sold">تم بيع 2.3K+</div>
+
+    </div>
+
+
+</div>
 
 
 <!-- PRODUCT TABS -->
 
 <div class="product-tabs">
 
-  <div class="tab active">الكل</div>
+    <div class="tab active">الكل</div>
 
-  <div class="tab">⚡ الصفقات</div>
+    <div class="tab">⚡ المفضلات</div>
 
-  <div class="tab">⭐ منتجات بتقييم 5 نجوم</div>
+    <div class="tab">★ منتجات بتقييم 5 نجوم</div>
 
-  <div class="tab">👍 المنتجات الأعلى تقييماً</div>
+    <div class="tab">👍 المنتجات الأعلى تقييماً</div>
 
 </div>
 
 
 <!-- PRODUCTS -->
 
-<section class="products" id="products">
+<section class="products">
 
 
-<!-- PRODUCT 1 -->
+    <!-- PRODUCT 1 -->
 
-<div class="product-card">
+    <div class="product-card">
 
-  <span class="badge">محلي</span>
+        <div class="product-image">
 
-  <button class="favorite">♡</button>
+            <div class="heart">♡</div>
 
-  <div class="product-image-wrap">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80">
 
-    <img
-    class="product-image"
-    src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=85"
-    >
+        </div>
 
-  </div>
+        <div class="product-info">
 
-  <div class="product-info">
+            <div class="product-name">
+                Samsung Galaxy S24 Ultra 5G - 512GB
+            </div>
 
-    <div class="product-name">
-      Samsung Galaxy S24 Ultra 5G - 512GB
-    </div>
+            <div class="product-rating">
 
-    <div class="product-meta">
+                <span class="stars">★★★★★</span>
 
-      <div class="rating">
-        ★★★★★
-      </div>
+                <span class="rating-count">(309)</span>
 
-      <div class="sales">
-        (309)
-      </div>
+            </div>
 
-    </div>
+            <div class="product-bottom">
 
-    <div class="product-bottom">
+                <div class="price">3,299.00 ر.س</div>
 
-      <button class="add-cart" onclick="addToCart()">🛒</button>
+                <button class="add-cart">🛒</button>
 
-      <div>
-        <div class="price">3,299 ر.س</div>
-        <div class="old-price">3,799 ر.س</div>
-      </div>
+            </div>
+
+        </div>
 
     </div>
 
-  </div>
 
-</div>
+    <!-- PRODUCT 2 -->
 
+    <div class="product-card">
 
-<!-- PRODUCT 2 -->
+        <div class="product-image">
 
-<div class="product-card">
+            <div class="heart">♡</div>
 
-  <button class="favorite">♡</button>
+            <img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=600&q=80">
 
-  <div class="product-image-wrap">
+        </div>
 
-    <img
-    class="product-image"
-    src="https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?auto=format&fit=crop&w=600&q=85"
-    >
+        <div class="product-info">
 
-  </div>
+            <div class="product-name">
+                سماعات بلوتوث لاسلكية برو
+            </div>
 
-  <div class="product-info">
+            <div class="product-rating">
 
-    <div class="product-name">
-      سماعات بلوتوث لاسلكية برو
-    </div>
+                <span class="stars">★★★★★</span>
 
-    <div class="product-meta">
+                <span class="rating-count">(126)</span>
 
-      <div class="rating">★★★★★</div>
+            </div>
 
-      <div class="sales">(126)</div>
+            <div class="product-bottom">
 
-    </div>
+                <div class="price">129.00 ر.س</div>
 
-    <div class="product-bottom">
+                <button class="add-cart">🛒</button>
 
-      <button class="add-cart" onclick="addToCart()">🛒</button>
+            </div>
 
-      <div class="price">129 ر.س</div>
+        </div>
 
     </div>
 
-  </div>
 
-</div>
+    <!-- PRODUCT 3 -->
 
+    <div class="product-card">
 
-<!-- PRODUCT 3 -->
+        <div class="product-image">
 
-<div class="product-card">
+            <div class="heart">♡</div>
 
-  <button class="favorite">♡</button>
+            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=600&q=80">
 
-  <div class="product-image-wrap">
+        </div>
 
-    <img
-    class="product-image"
-    src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=600&q=85"
-    >
+        <div class="product-info">
 
-  </div>
+            <div class="product-name">
+                ساعة ذكية شاشة AMOLED
+            </div>
 
-  <div class="product-info">
+            <div class="product-rating">
 
-    <div class="product-name">
-      ساعة ذكية AMOLED بشاشة عالية الدقة
-    </div>
+                <span class="stars">★★★★☆</span>
 
-    <div class="product-meta">
+                <span class="rating-count">(98)</span>
 
-      <div class="rating">★★★★☆</div>
+            </div>
 
-      <div class="sales">(98)</div>
+            <div class="product-bottom">
 
-    </div>
+                <div class="price">199.00 ر.س</div>
 
-    <div class="product-bottom">
+                <button class="add-cart">🛒</button>
 
-      <button class="add-cart" onclick="addToCart()">🛒</button>
+            </div>
 
-      <div class="price">199 ر.س</div>
+        </div>
 
     </div>
 
-  </div>
 
-</div>
+    <!-- PRODUCT 4 -->
 
+    <div class="product-card">
 
-<!-- PRODUCT 4 -->
+        <div class="product-image">
 
-<div class="product-card">
+            <div class="heart">♡</div>
 
-  <button class="favorite">♡</button>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80">
 
-  <div class="product-image-wrap">
+        </div>
 
-    <img
-    class="product-image"
-    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=85"
-    >
+        <div class="product-info">
 
-  </div>
+            <div class="product-name">
+                حذاء رياضي رجالي مريح
+            </div>
 
-  <div class="product-info">
+            <div class="product-rating">
 
-    <div class="product-name">
-      حذاء رياضي رجالي مريح للجري
-    </div>
+                <span class="stars">★★★★☆</span>
 
-    <div class="product-meta">
+                <span class="rating-count">(58)</span>
 
-      <div class="rating">★★★★☆</div>
+            </div>
 
-      <div class="sales">(58)</div>
+            <div class="product-bottom">
 
-    </div>
+                <div class="price">149.00 ر.س</div>
 
-    <div class="product-bottom">
+                <button class="add-cart">🛒</button>
 
-      <button class="add-cart" onclick="addToCart()">🛒</button>
+            </div>
 
-      <div class="price">149 ر.س</div>
+        </div>
 
     </div>
 
-  </div>
 
-</div>
+    <!-- PRODUCT 5 -->
 
+    <div class="product-card">
 
-<!-- PRODUCT 5 -->
+        <div class="product-image">
 
-<div class="product-card">
+            <div class="heart">♡</div>
 
-  <button class="favorite">♡</button>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80">
 
-  <div class="product-image-wrap">
+        </div>
 
-    <img
-    class="product-image"
-    src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=85"
-    >
+        <div class="product-info">
 
-  </div>
+            <div class="product-name">
+                ساعة كلاسيكية أنيقة
+            </div>
 
-  <div class="product-info">
+            <div class="product-rating">
 
-    <div class="product-name">
-      ساعة يد أنيقة للرجال
-    </div>
+                <span class="stars">★★★★★</span>
 
-    <div class="product-meta">
+                <span class="rating-count">(74)</span>
 
-      <div class="rating">★★★★★</div>
+            </div>
 
-      <div class="sales">(214)</div>
+            <div class="product-bottom">
 
-    </div>
+                <div class="price">249.00 ر.س</div>
 
-    <div class="product-bottom">
+                <button class="add-cart">🛒</button>
 
-      <button class="add-cart" onclick="addToCart()">🛒</button>
+            </div>
 
-      <div class="price">249 ر.س</div>
+        </div>
 
     </div>
 
-  </div>
 
-</div>
+    <!-- PRODUCT 6 -->
 
+    <div class="product-card">
 
-<!-- PRODUCT 6 -->
+        <div class="product-image">
 
-<div class="product-card">
+            <div class="heart">♡</div>
 
-  <button class="favorite">♡</button>
+            <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=80">
 
-  <div class="product-image-wrap">
+        </div>
 
-    <img
-    class="product-image"
-    src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=85"
-    >
+        <div class="product-info">
 
-  </div>
+            <div class="product-name">
+                كرسي منزلي عصري ومريح
+            </div>
 
-  <div class="product-info">
+            <div class="product-rating">
 
-    <div class="product-name">
-      كرسي منزلي عصري ومريح
-    </div>
+                <span class="stars">★★★★★</span>
 
-    <div class="product-meta">
+                <span class="rating-count">(42)</span>
 
-      <div class="rating">★★★★★</div>
+            </div>
 
-      <div class="sales">(87)</div>
+            <div class="product-bottom">
 
-    </div>
+                <div class="price">349.00 ر.س</div>
 
-    <div class="product-bottom">
+                <button class="add-cart">🛒</button>
 
-      <button class="add-cart" onclick="addToCart()">🛒</button>
+            </div>
 
-      <div class="price">399 ر.س</div>
+        </div>
 
     </div>
-
-  </div>
-
-</div>
 
 
 </section>
 
 
-<!-- BOTTOM NAV -->
+<!-- BOTTOM NAVIGATION -->
 
 <nav class="bottom-nav">
 
-  <div class="nav-item active">
-    <span class="nav-icon">🏠</span>
-    الرئيسية
-  </div>
+
+    <div class="nav-item active">
+
+        <div class="nav-icon">⌂</div>
+
+        <div>الرئيسية</div>
+
+    </div>
 
 
-  <div class="nav-item">
-    <span class="nav-icon">▦</span>
-    الفئات
-  </div>
+    <div class="nav-item">
+
+        <div class="nav-icon">▦</div>
+
+        <div>الفئات</div>
+
+    </div>
 
 
-  <div class="nav-item">
+    <div class="nav-item">
 
-    <span class="nav-badge">99+</span>
+        <div class="nav-icon">♙</div>
 
-    <span class="nav-icon">♙</span>
+        <div class="nav-badge">99+</div>
 
-    حسابي
+        <div>حسابي</div>
 
-  </div>
-
-
-  <div class="nav-item">
-
-    <span class="nav-badge" id="bottomCart">0</span>
-
-    <span class="nav-icon">🛒</span>
-
-    عربة التسوق
-
-  </div>
+    </div>
 
 
-  <div class="nav-item">
-    <span class="nav-icon">🚚</span>
-    الشحن مجاني
-  </div>
+    <div class="nav-item">
+
+        <div class="nav-icon">🛒</div>
+
+        <div class="nav-badge">3</div>
+
+        <div>عربة التسوق</div>
+
+    </div>
+
 
 </nav>
 
 
 <script>
 
-let cart = 0;
+/* إضافة المنتج للسلة */
 
-function addToCart(){
+let cartCount = 3;
 
-  cart++;
+const buttons = document.querySelectorAll(".add-cart");
 
-  document.getElementById("cartCount").innerText = cart;
+buttons.forEach(button => {
 
-  document.getElementById("bottomCart").innerText = cart;
+    button.addEventListener("click", function(){
 
-}
+        cartCount++;
 
+        document.querySelector(".cart-badge").textContent = cartCount;
 
-/* FAVORITE */
+        document.querySelector(".bottom-nav .nav-badge").textContent = cartCount;
 
-document.querySelectorAll(".favorite").forEach(function(button){
+        this.innerHTML = "✓";
 
-  button.addEventListener("click",function(){
+        setTimeout(() => {
 
-    if(this.innerText === "♡"){
+            this.innerHTML = "🛒";
 
-      this.innerText = "♥";
-      this.style.color = "#d92316";
+        },1000);
 
-    }else{
-
-      this.innerText = "♡";
-      this.style.color = "#111";
-
-    }
-
-  });
+    });
 
 });
 
 
-/* CATEGORY ACTIVE */
+/* إضافة للمفضلة */
 
-document.querySelectorAll(".category").forEach(function(category){
+document.querySelectorAll(".heart").forEach(heart => {
 
-  category.addEventListener("click",function(){
+    heart.addEventListener("click", function(){
 
-    document.querySelectorAll(".category").forEach(function(item){
-      item.classList.remove("active");
+        if(this.innerHTML === "♡"){
+
+            this.innerHTML = "♥";
+            this.style.color = "#d91515";
+
+        }else{
+
+            this.innerHTML = "♡";
+            this.style.color = "#444";
+
+        }
+
     });
-
-    this.classList.add("active");
-
-  });
 
 });
 
 
-/* PRODUCT TABS */
+/* تغيير التصنيف */
 
-document.querySelectorAll(".tab").forEach(function(tab){
+document.querySelectorAll(".category").forEach(category => {
 
-  tab.addEventListener("click",function(){
+    category.addEventListener("click", function(){
 
-    document.querySelectorAll(".tab").forEach(function(item){
-      item.classList.remove("active");
+        document.querySelectorAll(".category").forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+        this.classList.add("active");
+
     });
 
-    this.classList.add("active");
+});
 
-  });
+
+/* تغيير تبويبات المنتجات */
+
+document.querySelectorAll(".tab").forEach(tab => {
+
+    tab.addEventListener("click", function(){
+
+        document.querySelectorAll(".tab").forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+        this.classList.add("active");
+
+    });
 
 });
 
